@@ -1,0 +1,141 @@
+"Country","...2","...3","year","value"
+"Andorra","Andorra","AND",2015,2
+"Angola","Angola","AGO",2015,2
+"Antigua and Barbuda","Antigua and Barbuda","ATG",2016,2
+"Argentina","Argentina","ARG",2010,2
+"Armenia","Armenia","ARM",2021,2
+"Australia","Australia","AUS",2022,2
+"Austria","Austria","AUT",2017,1
+"Azerbaijan","Azerbaijan","AZE",2014,1
+"Bahamas","Bahamas","BHS",2010,2
+"Bahrain","Bahrain","BHR",2016,2
+"Bangladesh","Bangladesh","BGD",2020,2
+"Barbados","Barbados","BRB",2003,2
+"Belarus","Belarus","BLR",2016,2
+"Belgium","Belgium","BEL",2019,2
+"Belize","Belize","BLZ",2014,2
+"Benin","Benin","BEN",2018,2
+"Bhutan","Bhutan","BTN",2018,2
+"Bolivia","Bolivia (Plurinational State of)","BOL",2022,2
+"Bosnia and Herzegovina","Bosnia and Herzegovina","BIH",2008,2
+"Botswana","Botswana","BWA",2010,2
+"Brazil","Brazil","BRA",2024,2
+"Brunei","Brunei Darussalam","BRN",2019,2
+"Burkina Faso","Burkina Faso","BFA",2021,2
+"Burundi","Burundi","BDI",2018,2
+"Cambodia","Cambodia","KHM",2023,2
+"Cameroon","Cameroon","CMR",2021,2
+"Canada","Canada","CAN",2022,2
+"Cape Verde","Cabo Verde","CPV",2017,2
+"Central African Republic","Central African Republic","CAF",2022,2
+"Chad","Chad","TCD",2022,2
+"China","China","CHN",2022,1
+"Colombia","Colombia","COL",2022,2
+"Comoros","Comoros","COM",2022,2
+"Congo","Congo","COG",2023,2
+"Cook Islands","Cook Islands","COK",2023,2
+"Costa Rica","Costa Rica","CRI",2022,1
+"Croatia","Croatia","HRV",2021,2
+"Cuba","Cuba","CUB",2021,1
+"Côte d’Ivoire","C�te d'Ivoire","CIV",2021,2
+"DR Congo","Democratic Republic of the Congo","COD",2018,2
+"Djibouti","Djibouti","DJI",2020,2
+"Dominica","Dominica","DMA",2010,2
+"Dominican Republic","Dominican Republic","DOM",2023,2
+"Ecuador","Ecuador","ECU",2022,2
+"El Salvador","El Salvador","SLV",2021,2
+"Equatorial Guinea","Equatorial Guinea","GNQ",2020,2
+"Eritrea","Eritrea","ERI",2021,2
+"Estonia","Estonia","EST",2019,2
+"Eswatini","Eswatini","SWZ",2024,2
+"Ethiopia","Ethiopia","ETH",2021,2
+"Fiji","Fiji","FJI",2023,2
+"Gabon","Gabon","GAB",2024,2
+"Gambia","Gambia","GMB",2021,2
+"Ghana","Ghana","GHA",2021,2
+"Greece","Greece","GRC",2021,2
+"Grenada","Grenada","GRD",2015,2
+"Guatemala","Guatemala","GTM",2018,2
+"Guinea","Guinea","GIN",2015,2
+"Guinea-Bissau","Guinea-Bissau","GNB",2018,2
+"Guyana","Guyana","GUY",2013,2
+"Haiti","Haiti","HTI",2021,2
+"Honduras","Honduras","HND",2014,2
+"Indonesia","Indonesia","IDN",2015,2
+"Iran","Iran (Islamic Republic of)","IRN",2023,2
+"Italy","Italy","ITA",2021,2
+"Jamaica","Jamaica","JAM",2019,2
+"Kazakhstan","Kazakhstan","KAZ",2019,2
+"Kenya","Kenya","KEN",2023,2
+"Kiribati","Kiribati","KIR",2020,2
+"Kyrgyzstan","Kyrgyzstan","KGZ",2019,2
+"Laos","Lao People's Democratic Republic","LAO",2020,2
+"Lebanon","Lebanon","LBN",2016,2
+"Lesotho","Lesotho","LSO",2018,2
+"Liberia","Liberia","LBR",2022,2
+"Libya","Libya","LBY",2014,1
+"Lithuania","Lithuania","LTU",2015,1
+"Luxembourg","Luxembourg","LUX",2022,2
+"Madagascar","Madagascar","MDG",2020,2
+"Malawi","Malawi","MWI",2022,2
+"Malaysia","Malaysia","MYS",2011,2
+"Maldives","Maldives","MDV",2016,2
+"Mali","Mali","MLI",2021,2
+"Marshall Islands","Marshall Islands","MHL",2017,1
+"Mauritania","Mauritania","MRT",2021,2
+"Mauritius","Mauritius","MUS",2020,2
+"Mexico","Mexico","MEX",2019,2
+"Micronesia","Micronesia","FSM",2004,1
+"Morocco","Morocco","MAR",2018,2
+"Mozambique","Mozambique","MOZ",2021,2
+"Namibia","Namibia","NAM",2017,2
+"Nepal","Nepal","NPL",2023,2
+"Nicaragua","Nicaragua","NIC",2022,2
+"Niger","Niger","NER",2022,2
+"Nigeria","Nigeria","NGA",2018,2
+"Niue","Niue","NIU",2011,1
+"North Korea","Democratic People's Republic of Korea","PRK",2017,1
+"Norway","Norway","NOR",2019,2
+"Oman","Oman","OMN",2021,2
+"Palau","Palau","PLW",2014,2
+"Panama","Panama","PAN",2017,1
+"Papua New Guinea","Papua New Guinea","PNG",2021,2
+"Paraguay","Paraguay","PRY",2019,2
+"Peru","Peru","PER",2024,2
+"Philippines","Philippines","PHL",2023,2
+"Portugal","Portugal","PRT",2021,2
+"Russia","Russian Federation","RUS",2020,2
+"Rwanda","Rwanda","RWA",2024,2
+"Saint Vincent and the Grenadines","Saint Vincent and the Grenadines","VCT",2013,2
+"Samoa","Samoa","WSM",2020,2
+"San Marino","San Marino","SMR",2021,2
+"Sao Tome and Principe","Sao Tome and Principe","STP",2022,2
+"Saudi Arabia","Saudi Arabia","SAU",2019,2
+"Senegal","Senegal","SEN",2019,2
+"Seychelles","Seychelles","SYC",2022,2
+"Sierra Leone","Sierra Leone","SLE",2021,2
+"Slovenia","Slovenia","SVN",2016,2
+"Solomon Islands","Solomon Islands","SLB",2016,2
+"Somalia","Somalia","SOM",2021,2
+"South Africa","South Africa","ZAF",2020,2
+"South Sudan","South Sudan","SSD",2017,2
+"Spain","Spain","ESP",2024,1
+"Suriname","Suriname","SUR",2019,2
+"Sweden","Sweden","SWE",2021,1
+"Switzerland","Switzerland","CHE",2019,2
+"Syria","Syrian Arab Republic","SYR",2020,2
+"Tajikistan","Tajikistan","TJK",2021,2
+"Thailand","Thailand","THA",2021,2
+"Timor-Leste","Timor-Leste","TLS",2011,2
+"Togo","Togo","TGO",2023,2
+"Tonga","Tonga","TON",2015,2
+"Turkey","Turkey","TUR",2024,2
+"Tuvalu","Tuvalu","TUV",2020,2
+"Uganda","Uganda","UGA",2020,2
+"Ukraine","Ukraine","UKR",2022,1
+"United Kingdom","United Kingdom of Great Britain and Northern Ireland","GBR",2024,2
+"United States","United States of America","USA",2018,2
+"Vanuatu","Vanuatu","VUT",2022,2
+"Venezuela","Venezuela (Bolivarian Republic of)","VEN",2015,2
+"Vietnam","Vietnam","VNM",2016,2
+"Zambia","Zambia","ZMB",2022,2

@@ -1,0 +1,23 @@
+Panel built: (609, 37) rows
+Panel built: (609, 37) rows
+Normalization completed (global and per-year).
+Correlation-based elimination A:[] B:[] C:[] D:['role_type_it_mm_global']
+Final index computed.
+WPI adjustment failed: Input X contains NaN.
+LinearRegression does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+CAS SHAP computed for Pillar D.
+Lagged dynamics modeled.
+Dependency network computed.
+Monte Carlo sensitivity completed.
+Codebook generated.
+Panel built: (609, 37) rows
+Normalization completed (global and per-year).
+Correlation-based elimination A:[] B:[] C:[] D:['role_type_it_mm_global']
+Final index computed.
+GHEI adjusted by WPI residualization (with fallback fill).
+CAS SHAP computed for Pillar D.
+Lagged dynamics modeled.
+Dependency network computed.
+Monte Carlo sensitivity completed.
+Codebook generated.
+Final dataset exported.
