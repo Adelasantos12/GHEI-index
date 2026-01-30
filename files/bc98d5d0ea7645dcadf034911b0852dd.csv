@@ -1,0 +1,950 @@
+country,ISO,year,participation_event_it,leadership_event_it,decision_event_it,admin_event_it,role_type_it
+Afghanistan,AFG,2006,1,0,1,0,2
+Afghanistan,AFG,2007,1,0,1,0,2
+Afghanistan,AFG,2009,1,0,1,0,2
+Afghanistan,AFG,2012,1,1,0,0,3
+Afghanistan,AFG,2014,1,0,1,0,2
+Afghanistan,AFG,2015,1,1,0,0,3
+Afghanistan,AFG,2018,1,1,1,0,3
+Afghanistan,AFG,2019,1,1,1,0,3
+Afghanistan,AFG,2020,1,1,1,0,3
+Afghanistan,AFG,2021,1,0,1,0,2
+Angola,AGO,2006,1,0,1,0,2
+Angola,AGO,2008,1,1,1,0,3
+Angola,AGO,2013,1,1,0,0,3
+Angola,AGO,2014,1,0,1,0,2
+Angola,AGO,2019,1,1,1,0,3
+Angola,AGO,2022,1,0,1,0,2
+Albania,ALB,2011,1,0,1,0,2
+Albania,ALB,2013,1,0,1,0,2
+Andorra,AND,2013,1,0,1,0,2
+Andorra,AND,2021,1,0,1,0,2
+United Arab Emirates,ARE,2005,2,1,1,0,3
+United Arab Emirates,ARE,2007,1,0,1,0,2
+United Arab Emirates,ARE,2013,1,0,0,1,1
+United Arab Emirates,ARE,2019,2,1,1,0,3
+Argentina,ARG,2007,1,0,1,0,2
+Argentina,ARG,2008,1,0,1,0,2
+Argentina,ARG,2013,2,0,1,1,2
+Argentina,ARG,2016,1,0,1,0,2
+Argentina,ARG,2018,1,0,1,0,2
+Argentina,ARG,2019,1,0,1,0,2
+Argentina,ARG,2020,1,0,1,0,2
+Armenia,ARM,2009,1,0,1,0,2
+Armenia,ARM,2010,1,0,1,0,2
+Armenia,ARM,2016,1,1,0,0,3
+Armenia,ARM,2022,1,0,1,0,2
+Antigua and Barbuda,ATG,2008,1,0,1,0,2
+Antigua and Barbuda,ATG,2016,1,0,1,0,2
+Antigua and Barbuda,ATG,2017,1,1,1,0,3
+Australia,AUS,2004,1,0,1,0,2
+Australia,AUS,2005,1,0,0,1,1
+Australia,AUS,2007,1,1,0,0,3
+Australia,AUS,2008,1,0,1,0,2
+Australia,AUS,2012,1,0,1,0,2
+Australia,AUS,2016,1,1,1,0,3
+Australia,AUS,2018,1,0,1,0,2
+Australia,AUS,2020,1,1,1,0,3
+Australia,AUS,2021,1,0,1,0,2
+Australia,AUS,2023,1,0,1,0,2
+Austria,AUT,2006,1,0,1,0,2
+Austria,AUT,2014,1,1,1,0,3
+Austria,AUT,2019,1,0,1,0,2
+Azerbaijan,AZE,2005,1,0,1,0,2
+Azerbaijan,AZE,2012,1,0,1,0,2
+Burundi,BDI,2008,1,0,1,0,2
+Burundi,BDI,2009,1,0,1,0,2
+Burundi,BDI,2015,1,0,1,0,2
+Burundi,BDI,2016,1,0,1,0,2
+Burundi,BDI,2021,1,0,1,0,2
+Belgium,BEL,2012,1,0,1,0,2
+Benin,BEN,2014,1,0,1,0,2
+Benin,BEN,2016,1,0,1,0,2
+Benin,BEN,2017,1,0,1,0,2
+Benin,BEN,2021,1,1,0,0,3
+Benin,BEN,2022,1,0,1,0,2
+Burkina Faso,BFA,2004,1,0,1,0,2
+Burkina Faso,BFA,2007,1,0,1,0,2
+Burkina Faso,BFA,2010,1,0,1,0,2
+Burkina Faso,BFA,2015,1,0,1,0,2
+Burkina Faso,BFA,2018,1,1,1,0,3
+Burkina Faso,BFA,2019,1,0,1,0,2
+Burkina Faso,BFA,2022,1,0,1,0,2
+Bangladesh,BGD,2004,2,1,2,0,3
+Bangladesh,BGD,2005,1,1,1,0,3
+Bangladesh,BGD,2008,1,0,1,0,2
+Bangladesh,BGD,2009,1,0,1,0,2
+Bangladesh,BGD,2019,1,0,1,0,2
+Bangladesh,BGD,2021,2,2,2,0,3
+Bulgaria,BGR,2004,1,1,0,0,3
+Bulgaria,BGR,2018,1,0,1,0,2
+Bulgaria,BGR,2021,1,1,1,0,3
+Bulgaria,BGR,2022,1,1,0,0,3
+Bahrain,BHR,2004,2,0,2,0,2
+Bahrain,BHR,2007,1,1,0,0,3
+Bahrain,BHR,2008,1,0,1,0,2
+Bahrain,BHR,2014,2,1,0,1,3
+Bahrain,BHR,2016,1,0,1,0,2
+Bahrain,BHR,2023,1,1,1,0,3
+Bahamas,BHS,2005,1,0,1,0,2
+Bahamas,BHS,2006,1,1,1,0,3
+Bahamas,BHS,2007,1,0,1,0,2
+Bahamas,BHS,2012,1,0,1,0,2
+Bahamas,BHS,2019,1,0,1,0,2
+Bahamas,BHS,2020,1,1,0,0,3
+Bosnia and Herzegovina,BIH,2005,1,0,1,0,2
+Belarus,BLR,2008,1,0,1,0,2
+Belarus,BLR,2021,1,0,1,0,2
+Bolivia (Plurinational State of),BOL,2004,1,0,1,0,2
+Bolivia (Plurinational State of),BOL,2005,1,0,1,0,2
+Bolivia (Plurinational State of),BOL,2008,1,0,1,0,2
+Brazil,BRA,2004,1,0,1,0,2
+Brazil,BRA,2005,1,0,1,0,2
+Brazil,BRA,2006,1,0,1,0,2
+Brazil,BRA,2008,1,0,1,0,2
+Brazil,BRA,2013,1,0,1,0,2
+Brazil,BRA,2017,1,0,1,0,2
+Brazil,BRA,2022,1,0,1,0,2
+Barbados,BRB,2005,1,1,1,0,3
+Barbados,BRB,2006,1,0,1,0,2
+Barbados,BRB,2010,1,0,1,0,2
+Barbados,BRB,2015,1,1,0,0,3
+Barbados,BRB,2018,1,0,1,0,2
+Barbados,BRB,2021,1,1,1,0,3
+Barbados,BRB,2023,1,0,1,0,2
+Brunei Darussalam,BRN,2004,1,0,1,0,2
+Brunei Darussalam,BRN,2005,1,1,1,0,3
+Brunei Darussalam,BRN,2006,1,1,0,0,3
+Brunei Darussalam,BRN,2009,1,0,1,0,2
+Brunei Darussalam,BRN,2023,1,1,1,0,3
+Bhutan,BTN,2004,1,1,1,0,3
+Bhutan,BTN,2005,2,0,2,0,2
+Bhutan,BTN,2011,1,1,1,0,3
+Bhutan,BTN,2012,1,1,1,0,3
+Bhutan,BTN,2016,1,0,1,0,2
+Bhutan,BTN,2019,1,1,0,0,3
+Bhutan,BTN,2020,1,1,1,0,3
+Bhutan,BTN,2021,1,1,0,0,3
+Bhutan,BTN,2023,2,1,0,1,3
+Botswana,BWA,2004,1,0,1,0,2
+Botswana,BWA,2007,1,0,1,0,2
+Botswana,BWA,2011,1,0,1,0,2
+Botswana,BWA,2015,1,1,1,0,3
+Botswana,BWA,2018,1,0,1,0,2
+Botswana,BWA,2020,1,0,1,0,2
+Central African Republic,CAF,2004,1,1,1,0,3
+Central African Republic,CAF,2016,1,0,1,0,2
+Canada,CAN,2006,1,0,1,0,2
+Canada,CAN,2007,2,0,1,1,2
+Canada,CAN,2009,1,0,1,0,2
+Canada,CAN,2012,1,1,1,0,3
+Canada,CAN,2015,1,0,1,0,2
+Canada,CAN,2020,1,1,1,0,3
+Canada,CAN,2021,1,0,1,0,2
+Canada,CAN,2022,1,0,1,0,2
+Switzerland,CHE,2007,1,1,1,0,3
+Switzerland,CHE,2011,1,0,1,0,2
+Switzerland,CHE,2012,1,0,0,1,1
+Switzerland,CHE,2014,1,0,0,1,1
+Switzerland,CHE,2015,1,0,0,1,1
+Switzerland,CHE,2023,1,0,1,0,2
+Chile,CHL,2004,1,0,1,0,2
+Chile,CHL,2006,1,1,0,0,3
+Chile,CHL,2009,1,0,1,0,2
+Chile,CHL,2010,1,0,1,0,2
+Chile,CHL,2011,1,1,1,0,3
+Chile,CHL,2013,1,0,1,0,2
+Chile,CHL,2015,1,1,1,0,3
+Chile,CHL,2018,1,0,1,0,2
+Chile,CHL,2021,1,0,1,0,2
+China,CHN,2004,2,0,2,0,2
+China,CHN,2005,2,0,2,0,2
+China,CHN,2006,3,0,3,0,2
+China,CHN,2007,2,0,2,0,2
+China,CHN,2008,2,0,2,0,2
+China,CHN,2009,1,0,1,0,2
+China,CHN,2010,2,0,2,0,2
+China,CHN,2011,1,0,1,0,2
+China,CHN,2012,1,0,1,0,2
+China,CHN,2013,1,0,1,0,2
+China,CHN,2014,2,0,2,0,2
+China,CHN,2015,1,1,0,0,3
+China,CHN,2016,1,0,1,0,2
+China,CHN,2017,1,0,1,0,2
+China,CHN,2018,2,0,2,0,2
+China,CHN,2019,1,0,1,0,2
+China,CHN,2020,1,1,0,0,3
+China,CHN,2021,1,0,1,0,2
+China,CHN,2022,2,0,2,0,2
+China,CHN,2023,1,1,0,0,3
+Cameroon,CMR,2005,1,0,1,0,2
+Cameroon,CMR,2008,1,0,1,0,2
+Cameroon,CMR,2009,1,1,0,0,3
+Cameroon,CMR,2011,1,0,1,0,2
+Cameroon,CMR,2016,1,0,1,0,2
+Cameroon,CMR,2018,1,1,1,0,3
+Cameroon,CMR,2021,1,0,1,0,2
+Cameroon,CMR,2022,1,0,1,0,2
+Cameroon,CMR,2023,1,0,1,0,2
+Democratic Republic of the Congo,COD,2004,1,0,1,0,2
+Democratic Republic of the Congo,COD,2007,1,0,1,0,2
+Democratic Republic of the Congo,COD,2010,1,0,1,0,2
+Democratic Republic of the Congo,COD,2014,1,0,1,0,2
+Democratic Republic of the Congo,COD,2019,1,0,1,0,2
+Democratic Republic of the Congo,COD,2023,1,0,1,0,2
+Congo,COG,2005,1,0,1,0,2
+Congo,COG,2008,1,1,0,0,3
+Congo,COG,2014,1,1,0,0,3
+Congo,COG,2015,1,0,1,0,2
+Congo,COG,2019,1,0,1,0,2
+Congo,COG,2020,1,1,0,0,3
+Congo,COG,2022,1,0,1,0,2
+Cook Islands,COK,2008,1,1,1,0,3
+Cook Islands,COK,2011,1,1,1,0,3
+Cook Islands,COK,2017,1,1,0,0,3
+Colombia,COL,2006,1,0,1,0,2
+Colombia,COL,2007,1,0,1,0,2
+Colombia,COL,2016,2,0,1,1,2
+Colombia,COL,2017,1,0,0,1,1
+Colombia,COL,2019,1,0,0,1,1
+Colombia,COL,2020,1,0,1,0,2
+Comoros,COM,2005,1,0,1,0,2
+Comoros,COM,2015,1,0,1,0,2
+Comoros,COM,2023,1,0,1,0,2
+Cabo Verde,CPV,2010,1,0,1,0,2
+Cabo Verde,CPV,2014,1,0,1,0,2
+Cabo Verde,CPV,2017,1,1,0,0,3
+Cabo Verde,CPV,2023,1,0,1,0,2
+Costa Rica,CRI,2006,1,0,1,0,2
+Costa Rica,CRI,2008,1,0,1,0,2
+Costa Rica,CRI,2009,1,0,1,0,2
+Costa Rica,CRI,2013,1,1,1,0,3
+Cuba,CUB,2004,1,0,1,0,2
+Cuba,CUB,2005,1,0,1,0,2
+Cuba,CUB,2006,1,0,1,0,2
+Cuba,CUB,2007,1,0,1,0,2
+Cuba,CUB,2008,1,0,1,0,2
+Cuba,CUB,2009,1,0,1,0,2
+Cuba,CUB,2010,1,0,1,0,2
+Cuba,CUB,2011,1,0,1,0,2
+Cuba,CUB,2012,2,0,2,0,2
+Cuba,CUB,2013,1,0,1,0,2
+Cuba,CUB,2014,1,1,0,0,3
+Cuba,CUB,2015,1,0,1,0,2
+Cuba,CUB,2016,1,0,1,0,2
+Cuba,CUB,2017,1,0,1,0,2
+Cuba,CUB,2018,1,0,1,0,2
+Cuba,CUB,2019,1,0,1,0,2
+Cuba,CUB,2020,1,0,1,0,2
+Cuba,CUB,2021,1,0,1,0,2
+Cuba,CUB,2022,1,0,1,0,2
+Cuba,CUB,2023,1,0,1,0,2
+Cyprus,CYP,2011,1,1,0,0,3
+Czech Republic,CZE,2009,1,0,1,0,2
+Czech Republic,CZE,2022,1,0,1,0,2
+Germany,DEU,2007,1,0,1,0,2
+Germany,DEU,2009,1,0,1,0,2
+Germany,DEU,2010,1,1,1,0,3
+Germany,DEU,2018,2,0,1,1,2
+Germany,DEU,2020,1,0,0,1,1
+Germany,DEU,2021,1,0,0,1,1
+Germany,DEU,2022,1,0,0,1,1
+Djibouti,DJI,2006,2,1,1,0,3
+Djibouti,DJI,2007,1,0,1,0,2
+Djibouti,DJI,2009,1,0,1,0,2
+Djibouti,DJI,2012,1,0,1,0,2
+Djibouti,DJI,2017,1,0,1,0,2
+Djibouti,DJI,2018,2,1,1,0,3
+Djibouti,DJI,2019,1,0,1,0,2
+Djibouti,DJI,2020,1,0,1,0,2
+Djibouti,DJI,2021,1,0,1,0,2
+Djibouti,DJI,2022,1,1,0,0,3
+Djibouti,DJI,2023,1,0,1,0,2
+Denmark,DNK,2006,1,0,1,0,2
+Denmark,DNK,2012,1,0,1,0,2
+Denmark,DNK,2018,1,1,1,0,3
+Denmark,DNK,2021,2,1,2,0,3
+Dominican Republic,DOM,2006,1,0,1,0,2
+Dominican Republic,DOM,2015,1,0,1,0,2
+Dominican Republic,DOM,2017,1,0,1,0,2
+Dominican Republic,DOM,2018,1,1,0,0,3
+Dominican Republic,DOM,2022,1,0,1,0,2
+Algeria,DZA,2016,1,0,1,0,2
+Algeria,DZA,2021,1,0,1,0,2
+Ecuador,ECU,2007,1,1,0,0,3
+Ecuador,ECU,2010,2,1,2,0,3
+Ecuador,ECU,2018,1,1,1,0,3
+Ecuador,ECU,2023,1,1,0,0,3
+Egypt,EGY,2006,1,0,1,0,2
+Egypt,EGY,2008,1,1,1,0,3
+Egypt,EGY,2010,1,1,1,0,3
+Egypt,EGY,2011,1,0,1,0,2
+Egypt,EGY,2013,1,0,1,0,2
+Eritrea,ERI,2004,1,0,1,0,2
+Eritrea,ERI,2005,1,1,0,0,3
+Eritrea,ERI,2011,1,0,1,0,2
+Eritrea,ERI,2014,1,0,1,0,2
+Eritrea,ERI,2020,1,0,1,0,2
+Spain,ESP,2005,1,1,0,0,3
+Spain,ESP,2006,1,0,1,0,2
+Spain,ESP,2010,1,0,1,0,2
+Estonia,EST,2004,1,0,1,0,2
+Estonia,EST,2008,1,1,0,0,3
+Estonia,EST,2009,1,0,1,0,2
+Estonia,EST,2010,1,0,1,0,2
+Estonia,EST,2015,1,1,1,0,3
+Estonia,EST,2016,1,0,1,0,2
+Estonia,EST,2021,1,1,0,0,3
+Ethiopia,ETH,2005,1,0,1,0,2
+Ethiopia,ETH,2007,1,1,0,0,3
+Ethiopia,ETH,2008,1,0,1,0,2
+Ethiopia,ETH,2011,1,0,1,0,2
+Ethiopia,ETH,2016,1,1,1,0,3
+Ethiopia,ETH,2020,1,0,1,0,2
+Ethiopia,ETH,2022,1,0,1,0,2
+Finland,FIN,2006,1,1,1,0,3
+Finland,FIN,2016,1,1,1,0,3
+Finland,FIN,2018,1,0,1,0,2
+Fiji,FJI,2004,1,0,0,1,1
+Fiji,FJI,2013,1,0,1,0,2
+Fiji,FJI,2014,1,1,0,0,3
+Fiji,FJI,2016,1,0,1,0,2
+Fiji,FJI,2017,1,1,1,0,3
+Fiji,FJI,2018,1,0,1,0,2
+Fiji,FJI,2020,1,0,1,0,2
+Fiji,FJI,2021,1,1,1,0,3
+France,FRA,2004,2,0,2,0,2
+France,FRA,2005,2,0,2,0,2
+France,FRA,2006,2,0,2,0,2
+France,FRA,2007,2,0,2,0,2
+France,FRA,2008,2,0,2,0,2
+France,FRA,2009,2,0,2,0,2
+France,FRA,2010,1,0,1,0,2
+France,FRA,2011,1,0,1,0,2
+France,FRA,2012,1,0,1,0,2
+France,FRA,2013,1,0,1,0,2
+France,FRA,2014,1,0,1,0,2
+France,FRA,2015,2,0,2,0,2
+France,FRA,2016,1,0,1,0,2
+France,FRA,2017,1,0,1,0,2
+France,FRA,2018,1,0,1,0,2
+France,FRA,2019,1,0,1,0,2
+France,FRA,2020,1,0,1,0,2
+France,FRA,2021,2,0,2,0,2
+France,FRA,2022,1,0,1,0,2
+France,FRA,2023,1,0,1,0,2
+Micronesia,FSM,2004,1,0,1,0,2
+Micronesia,FSM,2011,1,0,1,0,2
+Micronesia,FSM,2022,1,0,1,0,2
+Gabon,GAB,2006,1,0,1,0,2
+Gabon,GAB,2018,2,0,2,0,2
+Gabon,GAB,2023,1,1,1,0,3
+United Kingdom of Great Britain and Northern Ireland,GBR,2004,2,0,2,0,2
+United Kingdom of Great Britain and Northern Ireland,GBR,2005,2,0,2,0,2
+United Kingdom of Great Britain and Northern Ireland,GBR,2007,1,0,1,0,2
+United Kingdom of Great Britain and Northern Ireland,GBR,2008,2,0,2,0,2
+United Kingdom of Great Britain and Northern Ireland,GBR,2009,1,0,1,0,2
+United Kingdom of Great Britain and Northern Ireland,GBR,2010,1,0,1,0,2
+United Kingdom of Great Britain and Northern Ireland,GBR,2011,1,0,1,0,2
+United Kingdom of Great Britain and Northern Ireland,GBR,2012,1,0,1,0,2
+United Kingdom of Great Britain and Northern Ireland,GBR,2013,1,1,1,0,3
+United Kingdom of Great Britain and Northern Ireland,GBR,2014,2,0,2,0,2
+United Kingdom of Great Britain and Northern Ireland,GBR,2015,1,0,1,0,2
+United Kingdom of Great Britain and Northern Ireland,GBR,2016,1,0,1,0,2
+United Kingdom of Great Britain and Northern Ireland,GBR,2017,1,0,1,0,2
+United Kingdom of Great Britain and Northern Ireland,GBR,2018,1,0,1,0,2
+United Kingdom of Great Britain and Northern Ireland,GBR,2019,1,0,1,0,2
+United Kingdom of Great Britain and Northern Ireland,GBR,2020,2,0,2,0,2
+United Kingdom of Great Britain and Northern Ireland,GBR,2021,1,0,1,0,2
+United Kingdom of Great Britain and Northern Ireland,GBR,2022,1,0,1,0,2
+United Kingdom of Great Britain and Northern Ireland,GBR,2023,1,0,1,0,2
+Georgia,GEO,2006,1,0,1,0,2
+Georgia,GEO,2017,1,0,1,0,2
+Georgia,GEO,2022,1,1,1,0,3
+Ghana,GHA,2007,1,0,1,0,2
+Ghana,GHA,2008,1,0,0,1,1
+Ghana,GHA,2011,1,0,0,1,1
+Ghana,GHA,2014,1,0,0,1,1
+Ghana,GHA,2015,1,0,1,0,2
+Ghana,GHA,2020,1,0,1,0,2
+Guinea,GIN,2005,1,0,1,0,2
+Guinea,GIN,2006,1,1,1,0,3
+Guinea,GIN,2007,1,0,1,0,2
+Guinea,GIN,2011,1,0,1,0,2
+Guinea,GIN,2014,1,0,1,0,2
+Guinea,GIN,2017,1,0,1,0,2
+Gambia,GMB,2005,1,0,1,0,2
+Gambia,GMB,2006,1,0,1,0,2
+Gambia,GMB,2011,1,0,1,0,2
+Gambia,GMB,2014,1,0,1,0,2
+Guinea-Bissau,GNB,2007,1,0,1,0,2
+Guinea-Bissau,GNB,2008,1,0,1,0,2
+Guinea-Bissau,GNB,2009,1,0,1,0,2
+Guinea-Bissau,GNB,2020,1,0,1,0,2
+Greece,GRC,2014,1,0,1,0,2
+Greece,GRC,2017,1,1,1,0,3
+Grenada,GRD,2004,1,1,0,0,3
+Grenada,GRD,2016,1,1,1,0,3
+Grenada,GRD,2019,1,0,1,0,2
+Guatemala,GTM,2005,1,0,1,0,2
+Guatemala,GTM,2010,1,0,0,1,1
+Guatemala,GTM,2014,1,1,1,0,3
+Guatemala,GTM,2021,2,2,0,0,3
+Guyana,GUY,2004,1,0,1,0,2
+Guyana,GUY,2005,1,0,1,0,2
+Guyana,GUY,2008,1,1,0,0,3
+Guyana,GUY,2014,1,0,1,0,2
+Guyana,GUY,2019,2,1,2,0,3
+Honduras,HND,2007,1,1,1,0,3
+Honduras,HND,2013,1,0,1,0,2
+Honduras,HND,2019,1,0,1,0,2
+Croatia,HRV,2011,1,1,1,0,3
+Croatia,HRV,2012,1,0,1,0,2
+Croatia,HRV,2020,1,0,1,0,2
+Haiti,HTI,2013,1,1,0,0,3
+Haiti,HTI,2021,1,0,1,0,2
+Hungary,HUN,2004,1,1,1,0,3
+Hungary,HUN,2006,1,0,1,0,2
+Hungary,HUN,2008,1,0,1,0,2
+Hungary,HUN,2011,1,0,1,0,2
+Indonesia,IDN,2006,1,1,0,0,3
+Indonesia,IDN,2007,2,0,2,0,2
+Indonesia,IDN,2009,1,1,1,0,3
+Indonesia,IDN,2012,1,1,0,0,3
+Indonesia,IDN,2015,1,0,1,0,2
+Indonesia,IDN,2017,1,1,1,0,3
+Indonesia,IDN,2018,1,0,1,0,2
+Indonesia,IDN,2022,1,1,0,0,3
+India,IND,2005,1,0,1,0,2
+India,IND,2006,1,1,1,0,3
+India,IND,2008,1,0,1,0,2
+India,IND,2009,1,0,1,0,2
+India,IND,2011,1,0,1,0,2
+India,IND,2013,1,1,1,0,3
+India,IND,2015,1,1,0,0,3
+India,IND,2018,1,1,1,0,3
+India,IND,2020,1,0,1,0,2
+India,IND,2022,1,1,1,0,3
+India,IND,2023,1,0,1,0,2
+Ireland,IRL,2004,1,0,1,0,2
+Ireland,IRL,2007,1,1,0,0,3
+Ireland,IRL,2013,1,0,1,0,2
+Iran (Islamic Republic of),IRN,2005,1,1,1,0,3
+Iran (Islamic Republic of),IRN,2006,1,0,1,0,2
+Iran (Islamic Republic of),IRN,2008,1,0,1,0,2
+Iran (Islamic Republic of),IRN,2011,1,1,0,0,3
+Iran (Islamic Republic of),IRN,2012,1,1,1,0,3
+Iran (Islamic Republic of),IRN,2014,1,1,1,0,3
+Iran (Islamic Republic of),IRN,2016,1,1,1,0,3
+Iran (Islamic Republic of),IRN,2019,1,1,1,0,3
+Iraq,IRQ,2005,1,0,1,0,2
+Iraq,IRQ,2013,1,0,1,0,2
+Iraq,IRQ,2016,1,0,1,0,2
+Iraq,IRQ,2017,1,0,1,0,2
+Iceland,ISL,2006,1,0,0,1,1
+Iceland,ISL,2021,1,0,1,0,2
+Israel,ISR,2004,1,0,1,0,2
+Israel,ISR,2006,1,0,1,0,2
+Israel,ISR,2018,1,0,1,0,2
+Italy,ITA,2006,1,0,1,0,2
+Italy,ITA,2007,1,0,1,0,2
+Italy,ITA,2008,1,1,1,0,3
+Italy,ITA,2017,1,0,1,0,2
+Jamaica,JAM,2004,1,0,1,0,2
+Jamaica,JAM,2007,1,0,1,0,2
+Jamaica,JAM,2009,1,1,1,0,3
+Jamaica,JAM,2010,1,0,1,0,2
+Jamaica,JAM,2012,1,1,1,0,3
+Jamaica,JAM,2016,1,0,1,0,2
+Jordan,JOR,2004,1,1,1,0,3
+Jordan,JOR,2007,1,1,1,0,3
+Jordan,JOR,2010,1,0,1,0,2
+Jordan,JOR,2015,1,0,1,0,2
+japan,JPN,2005,1,0,1,0,2
+japan,JPN,2009,1,0,1,0,2
+japan,JPN,2010,1,1,1,0,3
+japan,JPN,2013,2,1,1,0,3
+japan,JPN,2016,1,0,0,1,1
+japan,JPN,2017,2,0,1,1,2
+japan,JPN,2018,1,0,0,1,1
+japan,JPN,2019,1,1,1,0,3
+japan,JPN,2021,1,0,1,0,2
+japan,JPN,2022,1,1,1,0,3
+Kazakhstan,KAZ,2004,1,0,1,0,2
+Kazakhstan,KAZ,2011,1,1,1,0,3
+Kazakhstan,KAZ,2013,1,0,1,0,2
+Kazakhstan,KAZ,2015,1,0,1,0,2
+Kazakhstan,KAZ,2018,1,1,0,0,3
+Kazakhstan,KAZ,2023,1,0,1,0,2
+Kenya,KEN,2004,1,0,1,0,2
+Kenya,KEN,2006,1,0,1,0,2
+Kenya,KEN,2009,1,0,1,0,2
+Kenya,KEN,2012,1,0,1,0,2
+Kenya,KEN,2014,1,1,1,0,3
+Kenya,KEN,2019,1,0,1,0,2
+Kyrgyzstan,KGZ,2017,1,0,1,0,2
+Kyrgyzstan,KGZ,2023,1,1,1,0,3
+Cambodia,KHM,2006,1,0,1,0,2
+Cambodia,KHM,2007,1,1,1,0,3
+Cambodia,KHM,2012,1,0,1,0,2
+Republic of Korea,KOR,2007,1,0,1,0,2
+Republic of Korea,KOR,2013,1,0,1,0,2
+Republic of Korea,KOR,2014,1,0,1,0,2
+Republic of Korea,KOR,2020,1,0,1,0,2
+Kuwait,KWT,2005,1,0,1,0,2
+Kuwait,KWT,2014,1,0,1,0,2
+Lao People's Democratic Republic,LAO,2004,1,1,1,0,3
+Lao People's Democratic Republic,LAO,2008,1,1,0,0,3
+Lao People's Democratic Republic,LAO,2019,1,1,0,0,3
+Lebanon,LBN,2005,1,0,1,0,2
+Lebanon,LBN,2012,1,0,1,0,2
+Lebanon,LBN,2022,1,1,1,0,3
+lebanon,LBN,2011,1,1,1,0,3
+Liberia,LBR,2004,1,0,1,0,2
+Liberia,LBR,2005,1,0,1,0,2
+Liberia,LBR,2008,1,0,1,0,2
+Liberia,LBR,2012,1,0,1,0,2
+Liberia,LBR,2013,1,1,1,0,3
+Liberia,LBR,2014,1,0,1,0,2
+Libya,LBY,2004,2,0,2,0,2
+Libya,LBY,2006,1,0,1,0,2
+Libya,LBY,2010,1,0,1,0,2
+Libya,LBY,2016,1,0,1,0,2
+Libya,LBY,2021,1,1,1,0,3
+libya,LBY,2004,2,0,2,0,2
+libya,LBY,2006,1,0,1,0,2
+libya,LBY,2010,1,0,1,0,2
+Saint Lucia,LCA,2023,1,0,1,0,2
+Sri Lanka,LKA,2004,1,0,1,0,2
+Sri Lanka,LKA,2006,1,0,1,0,2
+Sri Lanka,LKA,2007,1,0,1,0,2
+Sri Lanka,LKA,2008,1,1,1,0,3
+Sri Lanka,LKA,2009,1,1,0,0,3
+Sri Lanka,LKA,2010,1,1,1,0,3
+Sri Lanka,LKA,2014,1,1,0,0,3
+Sri Lanka,LKA,2016,1,0,0,1,1
+Sri Lanka,LKA,2017,1,0,1,0,2
+Sri Lanka,LKA,2018,1,0,0,1,1
+Sri Lanka,LKA,2020,2,1,1,1,3
+Sri Lanka,LKA,2021,1,0,1,0,2
+Lesotho,LSO,2004,1,0,1,0,2
+Lesotho,LSO,2009,1,1,1,0,3
+Lesotho,LSO,2012,1,0,1,0,2
+Lesotho,LSO,2023,1,0,1,0,2
+Lithuania,LTU,2005,1,0,1,0,2
+Lithuania,LTU,2012,1,0,1,0,2
+Lithuania,LTU,2014,1,1,0,0,3
+Luxembourg,LUX,2004,1,0,1,0,2
+Luxembourg,LUX,2005,1,0,1,0,2
+Latvia,LVA,2005,1,0,1,0,2
+Latvia,LVA,2006,1,0,1,0,2
+Latvia,LVA,2007,1,0,1,0,2
+Latvia,LVA,2009,1,1,1,0,3
+Latvia,LVA,2015,1,0,1,0,2
+Morocco,MAR,2007,1,0,1,0,2
+Morocco,MAR,2010,1,0,1,0,2
+Morocco,MAR,2013,1,1,1,0,3
+Morocco,MAR,2022,1,0,1,0,2
+Monaco,MCO,2004,1,0,1,0,2
+Monaco,MCO,2021,1,0,1,0,2
+Republic of Moldova,MDA,2006,1,0,1,0,2
+Republic of Moldova,MDA,2007,1,0,1,0,2
+Republic of Moldova,MDA,2012,1,1,0,0,3
+Republic of Moldova,MDA,2022,1,0,1,0,2
+Madagascar,MDG,2005,1,0,1,0,2
+Madagascar,MDG,2007,1,1,1,0,3
+Madagascar,MDG,2018,1,0,1,0,2
+Madagascar,MDG,2020,1,0,1,0,2
+Maldives,MDV,2004,1,0,0,1,1
+Maldives,MDV,2007,2,1,1,1,3
+Maldives,MDV,2008,1,1,0,0,3
+Maldives,MDV,2010,1,0,0,1,1
+Maldives,MDV,2012,1,0,1,0,2
+Maldives,MDV,2016,1,1,1,0,3
+Maldives,MDV,2017,1,0,1,0,2
+Maldives,MDV,2018,1,1,0,0,3
+Maldives,MDV,2019,1,1,1,0,3
+Maldives,MDV,2022,1,0,1,0,2
+Mexico,MEX,2004,1,0,1,0,2
+Mexico,MEX,2005,1,0,1,0,2
+Mexico,MEX,2008,1,0,1,0,2
+Mexico,MEX,2009,1,1,1,0,3
+Mexico,MEX,2011,1,0,1,0,2
+Mexico,MEX,2015,1,1,1,0,3
+Mexico,MEX,2016,1,0,1,0,2
+Mexico,MEX,2019,1,1,0,0,3
+Marshall Islands,MHL,2009,1,1,0,0,3
+North Macedonia,MKD,2007,1,0,1,0,2
+Mali,MLI,2006,1,0,1,0,2
+Mali,MLI,2020,2,2,2,0,3
+Mali,MLI,2021,1,0,1,0,2
+Malta,MLT,2005,1,1,1,0,3
+Malta,MLT,2015,2,1,2,0,3
+Malta,MLT,2017,1,0,1,0,2
+Malta,MLT,2023,1,1,0,0,3
+Myanmar,MMR,2010,1,1,0,0,3
+Myanmar,MMR,2011,1,0,1,0,2
+Myanmar,MMR,2014,1,1,1,0,3
+Myanmar,MMR,2019,1,0,1,0,2
+Montenegro,MNE,2009,1,0,1,0,2
+Montenegro,MNE,2015,1,0,1,0,2
+Mongolia,MNG,2005,1,0,1,0,2
+Mongolia,MNG,2010,1,0,1,0,2
+Mongolia,MNG,2019,1,0,1,0,2
+Mongolia,MNG,2020,2,0,1,1,2
+Mongolia,MNG,2021,3,2,0,1,3
+Mongolia,MNG,2022,1,0,0,1,1
+Mozambique,MOZ,2004,1,0,1,0,2
+Mozambique,MOZ,2006,1,1,0,0,3
+Mozambique,MOZ,2007,1,0,1,0,2
+Mozambique,MOZ,2008,1,0,1,0,2
+Mozambique,MOZ,2010,1,0,1,0,2
+Mozambique,MOZ,2017,1,0,1,0,2
+Mauritania,MRT,2006,1,0,1,0,2
+Mauritania,MRT,2007,1,0,1,0,2
+Mauritania,MRT,2008,1,0,1,0,2
+Mauritania,MRT,2012,1,0,1,0,2
+Mauritania,MRT,2018,1,0,1,0,2
+Mauritius,MUS,2005,1,0,0,1,1
+Mauritius,MUS,2008,1,0,1,0,2
+Mauritius,MUS,2017,1,1,1,0,3
+Mauritius,MUS,2023,1,0,1,0,2
+Malawi,MWI,2005,2,1,2,0,3
+Malawi,MWI,2007,1,0,1,0,2
+Malawi,MWI,2017,1,0,1,0,2
+Malawi,MWI,2023,1,0,1,0,2
+Malaysia,MYS,2004,1,1,0,0,3
+Malaysia,MYS,2008,1,0,1,0,2
+Malaysia,MYS,2012,1,0,1,0,2
+Malaysia,MYS,2016,1,1,0,0,3
+Malaysia,MYS,2021,1,0,1,0,2
+Malaysia,MYS,2022,1,1,0,0,3
+Namibia,NAM,2005,1,0,1,0,2
+Namibia,NAM,2007,1,0,1,0,2
+Namibia,NAM,2013,2,0,2,0,2
+Namibia,NAM,2021,1,0,1,0,2
+Niger,NER,2004,1,0,1,0,2
+Niger,NER,2008,2,0,2,0,2
+Niger,NER,2019,1,0,1,0,2
+Nigeria,NGA,2004,1,0,1,0,2
+Nigeria,NGA,2008,1,0,1,0,2
+Nigeria,NGA,2011,2,1,1,0,3
+Nigeria,NGA,2018,1,0,1,0,2
+Nigeria,NGA,2022,1,1,1,0,3
+Nicaragua,NIC,2004,1,0,1,0,2
+Nicaragua,NIC,2008,1,0,1,0,2
+Nicaragua,NIC,2012,1,0,1,0,2
+Nicaragua,NIC,2020,1,0,1,0,2
+Netherlands (Kingdom of the),NLD,2004,1,1,1,0,3
+Netherlands (Kingdom of the),NLD,2012,1,1,1,0,3
+Netherlands (Kingdom of the),NLD,2016,2,0,2,0,2
+Netherlands (Kingdom of the),NLD,2019,1,1,1,0,3
+Norway,NOR,2007,1,0,1,0,2
+Norway,NOR,2009,1,0,0,1,1
+Norway,NOR,2010,2,1,2,0,3
+Norway,NOR,2017,1,0,1,0,2
+Norway,NOR,2020,1,1,1,0,3
+Nepal,NPL,2006,1,0,1,0,2
+Nepal,NPL,2008,1,0,1,0,2
+Nepal,NPL,2010,1,1,1,0,3
+Nepal,NPL,2013,1,1,0,0,3
+Nepal,NPL,2014,2,1,2,0,3
+Nepal,NPL,2015,1,1,1,0,3
+Nepal,NPL,2020,1,0,1,0,2
+New Zealand,NZL,2005,1,1,0,0,3
+New Zealand,NZL,2006,2,0,2,0,2
+New Zealand,NZL,2007,2,0,2,0,2
+New Zealand,NZL,2009,1,1,1,0,3
+New Zealand,NZL,2014,1,0,0,1,1
+New Zealand,NZL,2015,1,0,1,0,2
+New Zealand,NZL,2018,1,1,1,0,3
+New Zealand,NZL,2023,1,1,1,0,3
+Oman,OMN,2006,2,1,1,1,3
+Oman,OMN,2008,2,0,2,0,2
+Oman,OMN,2009,1,0,0,1,1
+Oman,OMN,2012,1,0,0,1,1
+Oman,OMN,2013,1,1,0,0,3
+Oman,OMN,2015,1,0,1,0,2
+Oman,OMN,2016,1,1,0,0,3
+Oman,OMN,2020,2,0,2,0,2
+Oman,OMN,2021,1,0,1,0,2
+Pakistan,PAK,2004,1,1,0,0,3
+Pakistan,PAK,2005,1,0,1,0,2
+Pakistan,PAK,2013,1,1,1,0,3
+Pakistan,PAK,2015,1,0,1,0,2
+Pakistan,PAK,2018,1,0,0,1,1
+Panama,PAN,2006,1,0,1,0,2
+Panama,PAN,2007,1,0,1,0,2
+Panama,PAN,2012,1,0,1,0,2
+Panama,PAN,2016,1,1,0,0,3
+Panama,PAN,2021,1,0,1,0,2
+Peru,PER,2004,1,0,1,0,2
+Peru,PER,2006,1,1,1,0,3
+Peru,PER,2007,1,0,1,0,2
+Peru,PER,2009,1,1,0,0,3
+Peru,PER,2013,1,1,1,0,3
+Peru,PER,2015,1,0,1,0,2
+Peru,PER,2021,1,0,1,0,2
+Philippines,PHL,2006,1,1,1,0,3
+Philippines,PHL,2011,1,1,0,0,3
+Philippines,PHL,2012,1,1,1,0,3
+Philippines,PHL,2015,1,0,1,0,2
+Philippines,PHL,2017,1,0,1,0,2
+Philippines,PHL,2018,1,1,0,0,3
+Philippines,PHL,2021,1,0,1,0,2
+Philippines,PHL,2023,1,0,1,0,2
+Palau,PLW,2005,1,0,1,0,2
+Palau,PLW,2007,1,0,1,0,2
+Papua New Guinea,PNG,2008,1,0,1,0,2
+Papua New Guinea,PNG,2011,1,0,1,0,2
+Papua New Guinea,PNG,2015,1,1,1,0,3
+Poland,POL,2022,1,1,1,0,3
+Poland,POL,2023,1,1,1,0,3
+Democratic People's Republic of Korea,PRK,2007,1,1,0,0,3
+Democratic People's Republic of Korea,PRK,2008,1,0,1,0,2
+Democratic People's Republic of Korea,PRK,2011,1,1,0,0,3
+Democratic People's Republic of Korea,PRK,2013,1,0,1,0,2
+Democratic People's Republic of Korea,PRK,2017,1,1,0,0,3
+Democratic People's Republic of Korea,PRK,2023,1,0,1,0,2
+Portugal,PRT,2005,2,1,2,0,3
+Portugal,PRT,2021,1,0,1,0,2
+Paraguay,PRY,2005,1,0,1,0,2
+Paraguay,PRY,2007,2,0,2,0,2
+Paraguay,PRY,2011,1,0,1,0,2
+Paraguay,PRY,2012,1,1,0,0,3
+Paraguay,PRY,2019,1,1,1,0,3
+Paraguay,PRY,2021,2,1,2,0,3
+Qatar,QAT,2007,1,0,1,0,2
+Qatar,QAT,2008,1,0,1,0,2
+Qatar,QAT,2009,1,1,1,0,3
+Qatar,QAT,2011,1,0,1,0,2
+Qatar,QAT,2017,1,1,1,0,3
+Qatar,QAT,2021,1,1,0,0,3
+Qatar,QAT,2023,1,0,1,0,2
+Romania,ROU,2004,1,0,1,0,2
+Romania,ROU,2006,1,1,0,0,3
+Romania,ROU,2008,1,0,1,0,2
+Romania,ROU,2018,1,0,1,0,2
+Romania,ROU,2019,1,0,1,0,2
+Russian Federation,RUS,2004,2,0,2,0,2
+Russian Federation,RUS,2005,2,0,2,0,2
+Russian Federation,RUS,2006,2,0,2,0,2
+Russian Federation,RUS,2007,2,0,2,0,2
+Russian Federation,RUS,2008,3,0,3,0,2
+Russian Federation,RUS,2009,1,0,1,0,2
+Russian Federation,RUS,2010,1,0,1,0,2
+Russian Federation,RUS,2011,1,0,1,0,2
+Russian Federation,RUS,2012,1,0,1,0,2
+Russian Federation,RUS,2013,1,0,1,0,2
+Russian Federation,RUS,2014,2,0,2,0,2
+Russian Federation,RUS,2015,1,0,1,0,2
+Russian Federation,RUS,2016,1,0,1,0,2
+Russian Federation,RUS,2017,1,1,0,0,3
+Russian Federation,RUS,2018,1,0,1,0,2
+Russian Federation,RUS,2019,1,0,1,0,2
+Russian Federation,RUS,2020,2,0,2,0,2
+Russian Federation,RUS,2021,1,0,1,0,2
+Rwanda,RWA,2005,1,0,1,0,2
+Rwanda,RWA,2009,1,0,1,0,2
+Rwanda,RWA,2010,1,1,0,0,3
+Rwanda,RWA,2013,1,0,1,0,2
+Rwanda,RWA,2017,1,0,1,0,2
+Rwanda,RWA,2021,1,0,1,0,2
+Rwanda,RWA,2022,1,0,0,1,1
+Saudi Arabia,SAU,2007,1,1,1,0,3
+Saudi Arabia,SAU,2013,1,0,1,0,2
+Saudi Arabia,SAU,2022,1,0,1,0,2
+Saudi Arabia,SAU,2023,1,1,0,0,3
+Sudan,SDN,2006,1,0,1,0,2
+Sudan,SDN,2008,1,1,0,0,3
+Sudan,SDN,2015,1,1,1,0,3
+Sudan,SDN,2018,1,0,1,0,2
+Sudan,SDN,2020,2,1,0,1,3
+Sudan,SDN,2022,1,0,0,1,1
+Sudan,SDN,2023,1,0,0,1,1
+Senegal,SEN,2005,1,0,1,0,2
+Senegal,SEN,2006,1,0,1,0,2
+Senegal,SEN,2011,1,0,1,0,2
+Senegal,SEN,2015,1,1,0,0,3
+Senegal,SEN,2019,1,1,0,0,3
+Senegal,SEN,2022,1,0,1,0,2
+Singapore,SGP,2005,1,1,1,0,3
+Singapore,SGP,2006,1,0,1,0,2
+Singapore,SGP,2019,1,0,1,0,2
+Singapore,SGP,2021,1,0,1,0,2
+Solomon Islands,SLB,2012,1,1,0,0,3
+Solomon Islands,SLB,2013,1,1,1,0,3
+Sierra Leone,SLE,2006,1,0,1,0,2
+Sierra Leone,SLE,2010,1,1,1,0,3
+Sierra Leone,SLE,2011,1,0,1,0,2
+Sierra Leone,SLE,2019,1,0,0,1,1
+Sierra Leone,SLE,2020,2,0,1,1,2
+El Salvador,SLV,2006,1,0,1,0,2
+El Salvador,SLV,2010,1,1,0,0,3
+El Salvador,SLV,2018,1,1,1,0,3
+El Salvador,SLV,2022,1,0,1,0,2
+El Salvador,SLV,2023,1,1,1,0,3
+San Marino,SMR,2015,1,1,0,0,3
+San Marino,SMR,2020,1,1,0,0,3
+Somalia,SOM,2009,1,0,1,0,2
+Somalia,SOM,2016,1,0,1,0,2
+Somalia,SOM,2017,1,1,0,0,3
+Somalia,SOM,2019,1,0,1,0,2
+Somalia,SOM,2021,1,0,1,0,2
+Somalia,SOM,2022,1,0,1,0,2
+Serbia,SRB,2009,1,0,1,0,2
+Serbia,SRB,2023,1,0,1,0,2
+South Sudan,SSD,2015,1,0,1,0,2
+Sao Tome and Principe,STP,2006,1,0,1,0,2
+Sao Tome and Principe,STP,2007,1,0,1,0,2
+Sao Tome and Principe,STP,2013,1,0,1,0,2
+Suriname,SUR,2007,1,0,1,0,2
+Suriname,SUR,2013,1,0,1,0,2
+Suriname,SUR,2017,1,1,0,0,3
+Slovakia,SVK,2017,1,1,1,0,3
+Slovakia,SVK,2022,1,0,1,0,2
+Slovenia,SVN,2006,1,0,1,0,2
+Slovenia,SVN,2008,1,0,1,0,2
+Slovenia,SVN,2021,1,0,1,0,2
+Sweden,SWE,2008,1,0,1,0,2
+Sweden,SWE,2009,1,1,0,0,3
+Sweden,SWE,2015,1,0,1,0,2
+Sweden,SWE,2023,1,0,1,0,2
+Eswatini,SWZ,2004,1,0,1,0,2
+Eswatini,SWZ,2009,1,0,1,0,2
+Eswatini,SWZ,2017,1,0,1,0,2
+Seychelles,SYC,2005,1,0,1,0,2
+Seychelles,SYC,2006,1,1,1,0,3
+Seychelles,SYC,2010,1,0,1,0,2
+Syrian Arab Republic,SYR,2007,1,0,1,0,2
+Syrian Arab Republic,SYR,2009,1,0,1,0,2
+Syrian Arab Republic,SYR,2015,1,0,1,0,2
+Syrian Arab Republic,SYR,2021,1,0,1,0,2
+Chad,TCD,2004,1,0,1,0,2
+Chad,TCD,2008,1,0,1,0,2
+Chad,TCD,2010,1,0,1,0,2
+Chad,TCD,2012,2,0,2,0,2
+Chad,TCD,2016,1,1,0,0,3
+Togo,TGO,2005,1,0,1,0,2
+Togo,TGO,2006,1,0,1,0,2
+Togo,TGO,2012,1,1,1,0,3
+Togo,TGO,2017,1,0,1,0,2
+Togo,TGO,2022,1,1,0,0,3
+Togo,TGO,2023,2,1,1,0,3
+Thailand,THA,2004,2,0,2,0,2
+Thailand,THA,2005,1,1,0,0,3
+Thailand,THA,2006,1,0,1,0,2
+Thailand,THA,2007,1,0,1,0,2
+Thailand,THA,2011,1,0,0,1,1
+Thailand,THA,2013,2,0,1,1,2
+Thailand,THA,2015,1,0,1,0,2
+Thailand,THA,2016,1,1,1,0,3
+Thailand,THA,2020,1,1,0,0,3
+Thailand,THA,2021,1,0,1,0,2
+Thailand,THA,2022,1,1,1,0,3
+Thailand,THA,2023,1,1,1,0,3
+Tajikistan,TJK,2019,1,0,1,0,2
+Turkmenistan,TKM,2012,1,0,1,0,2
+Timor-Leste,TLS,2004,1,1,0,0,3
+Timor-Leste,TLS,2005,1,0,1,0,2
+Timor-Leste,TLS,2008,1,1,1,0,3
+Timor-Leste,TLS,2010,1,0,1,0,2
+Timor-Leste,TLS,2014,1,0,1,0,2
+Timor-Leste,TLS,2016,1,1,0,0,3
+Timor-Leste,TLS,2021,1,0,1,0,2
+Tonga,TON,2004,1,0,1,0,2
+Tonga,TON,2014,1,1,1,0,3
+Tonga,TON,2019,1,0,1,0,2
+Tonga,TON,2023,1,0,1,0,2
+Trinidad and Tobago,TTO,2004,1,0,1,0,2
+Trinidad and Tobago,TTO,2007,1,1,1,0,3
+Trinidad and Tobago,TTO,2011,1,1,0,0,3
+Trinidad and Tobago,TTO,2022,1,1,1,0,3
+Tunisia,TUN,2004,1,0,1,0,2
+Tunisia,TUN,2007,1,0,1,0,2
+Tunisia,TUN,2010,1,1,0,0,3
+Tunisia,TUN,2014,1,0,1,0,2
+Tunisia,TUN,2019,1,0,1,0,2
+Turkey,TUR,2005,1,0,1,0,2
+Turkey,TUR,2006,1,0,1,0,2
+Turkey,TUR,2009,1,1,1,0,3
+Turkey,TUR,2010,1,1,0,0,3
+Turkey,TUR,2016,1,0,1,0,2
+Turkey,TUR,2018,1,0,1,0,2
+Turkey,TUR,2022,1,0,1,0,2
+United Republic of Tanzania,TZA,2010,1,0,1,0,2
+United Republic of Tanzania,TZA,2012,1,1,1,0,3
+United Republic of Tanzania,TZA,2016,1,0,1,0,2
+United Republic of Tanzania,TZA,2017,1,0,1,0,2
+United Republic of Tanzania,TZA,2020,1,0,1,0,2
+Uganda,UGA,2004,1,0,1,0,2
+Uganda,UGA,2006,1,0,1,0,2
+Uganda,UGA,2008,1,0,1,0,2
+Uganda,UGA,2014,1,1,1,0,3
+Uganda,UGA,2020,1,1,1,0,3
+Ukraine,UKR,2007,1,0,1,0,2
+Ukraine,UKR,2013,1,1,0,0,3
+Ukraine,UKR,2023,1,0,1,0,2
+Uruguay,URY,2004,1,0,1,0,2
+Uruguay,URY,2005,1,1,0,0,3
+Uruguay,URY,2008,1,1,1,0,3
+Uruguay,URY,2014,1,0,1,0,2
+Uruguay,URY,2022,1,0,1,0,2
+United States of America,USA,2004,1,0,1,0,2
+United States of America,USA,2005,1,0,1,0,2
+United States of America,USA,2006,2,0,2,0,2
+United States of America,USA,2007,1,0,1,0,2
+United States of America,USA,2008,1,0,1,0,2
+United States of America,USA,2009,1,0,1,0,2
+United States of America,USA,2010,2,0,2,0,2
+United States of America,USA,2011,1,0,1,0,2
+United States of America,USA,2012,1,0,1,0,2
+United States of America,USA,2013,1,0,1,0,2
+United States of America,USA,2014,2,0,2,0,2
+United States of America,USA,2015,1,0,1,0,2
+United States of America,USA,2016,1,0,1,0,2
+United States of America,USA,2017,1,0,1,0,2
+United States of America,USA,2018,2,0,2,0,2
+United States of America,USA,2019,1,0,1,0,2
+United States of America,USA,2020,1,0,1,0,2
+United States of America,USA,2021,1,0,1,0,2
+United States of America,USA,2022,3,1,1,1,3
+United States of America,USA,2023,2,0,1,1,2
+Uzbekistan,UZB,2011,1,0,1,0,2
+Uzbekistan,UZB,2016,1,1,1,0,3
+Uzbekistan,UZB,2019,1,1,0,0,3
+Saint Vincent and the Grenadines,VCT,2004,1,1,1,0,3
+Vietnam,VNM,2005,1,0,1,0,2
+Vietnam,VNM,2015,1,0,1,0,2
+Vietnam,VNM,2016,1,0,1,0,2
+Vietnam,VNM,2017,1,1,1,0,3
+Samoa,WSM,2007,1,0,1,0,2
+Samoa,WSM,2008,2,0,1,1,2
+Samoa,WSM,2010,1,1,0,0,3
+Samoa,WSM,2011,2,1,1,1,3
+Samoa,WSM,2013,1,0,0,1,1
+Yemen,YEM,2004,1,0,1,0,2
+Yemen,YEM,2008,1,0,1,0,2
+Yemen,YEM,2009,1,1,0,0,3
+Yemen,YEM,2010,1,0,1,0,2
+Yemen,YEM,2013,1,0,1,0,2
+Yemen,YEM,2022,1,0,1,0,2
+South Africa,ZAF,2004,1,1,0,0,3
+South Africa,ZAF,2008,1,0,1,0,2
+South Africa,ZAF,2013,2,0,2,0,2
+South Africa,ZAF,2019,1,0,1,0,2
+South Africa,ZAF,2021,1,1,1,0,3
+Zambia,ZMB,2006,1,0,1,0,2
+Zambia,ZMB,2017,1,0,1,0,2
+Zambia,ZMB,2021,1,0,1,0,2
+Zimbabwe,ZWE,2005,1,0,1,0,2
+Zimbabwe,ZWE,2008,1,1,1,0,3
+Zimbabwe,ZWE,2011,1,1,1,0,3
+Zimbabwe,ZWE,2018,1,1,0,0,3
+Zimbabwe,ZWE,2021,1,0,1,0,2
+C™te d'Ivoire,CIV,2007,1,0,1,0,2
+C™te d'Ivoire,CIV,2009,1,0,1,0,2
+C™te d'Ivoire,CIV,2012,1,1,0,0,3
+C™te d'Ivoire,CIV,2016,1,0,1,0,2
+C™te d'Ivoire,CIV,2023,1,0,1,0,2
+Venezuela (Bolivarian Republic of) ,VEN,2008,1,0,1,0,2

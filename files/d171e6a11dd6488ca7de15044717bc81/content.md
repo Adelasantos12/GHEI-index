@@ -1,0 +1,50 @@
+| Country                     | ISO   |   year |   value |
+|-----------------------------|-------|--------|---------|
+| Afghanistan                 | AFG   |   2023 |       2 |
+| Albania                     | ALB   |   2021 |       2 |
+| Algeria                     | DZA   |   2003 |       2 |
+| Armenia                     | ARM   |   2020 |       2 |
+| Bulgaria                    | BGR   |   2023 |       2 |
+| Burundi                     | BDI   |   2019 |       1 |
+| Cameroon                    | CMR   |   2020 |       2 |
+| Chile                       | CHL   |   2022 |       2 |
+| Croatia                     | HRV   |   2012 |       2 |
+| Cyprus                      | CYP   |   2019 |       2 |
+| Czech Republic              | CZE   |   2020 |       2 |
+| Egypt                       | EGY   |   2024 |       2 |
+| France                      | FRA   |   2023 |       2 |
+| Georgia                     | GEO   |   2011 |       1 |
+| Hungary                     | HUN   |   2021 |       2 |
+| Ireland                     | IRL   |   2012 |       2 |
+| Japan                       | JPN   |   2024 |       2 |
+| Jordan                      | JOR   |   2023 |       2 |
+| Latvia                      | LVA   |   2019 |       1 |
+| Lebanon                     | LBN   |   2022 |       2 |
+| Lithuania                   | LTU   |   2014 |       1 |
+| Malta                       | MLT   |   2022 |       2 |
+| Micronesia                  | FSM   |   2024 |       2 |
+| Montenegro                  | MNE   |   2023 |       2 |
+| Morocco                     | MAR   |   2012 |       2 |
+| Myanmar                     | MMR   |   2020 |       2 |
+| Nauru                       | NRU   |   2021 |       2 |
+| New Zealand                 | NZL   |   2023 |       2 |
+| Niger                       | NER   |   2021 |       2 |
+| North Macedonia             | MKD   |   2021 |       2 |
+| Oman                        | OMN   |   2014 |       2 |
+| Pakistan                    | PAK   |   2016 |       2 |
+| Qatar                       | QAT   |   2024 |       2 |
+| Republic of Moldova         | MDA   |   2022 |       2 |
+| Romania                     | ROU   |   2022 |       2 |
+| Saudi Arabia                | SAU   |   2018 |       2 |
+| Serbia                      | SRB   |   2016 |       1 |
+| Slovakia                    | SVK   |   2014 |       1 |
+| Spain                       | ESP   |   2022 |       1 |
+| Sri Lanka                   | LKA   |   2016 |       2 |
+| Tajikistan                  | TJK   |   2016 |       2 |
+| Trinidad and Tobago         | TTO   |   2016 |       2 |
+| Turkmenistan                | TKM   |   2015 |       2 |
+| United Arab Emirates        | ARE   |   2016 |       1 |
+| United Republic of Tanzania | TZA   |   2021 |       2 |
+| Vanuatu                     | VUT   |   2021 |       2 |
+| Yemen                       | YEM   |   2010 |       2 |
+| Zimbabwe                    | ZWE   |   2021 |       2 |

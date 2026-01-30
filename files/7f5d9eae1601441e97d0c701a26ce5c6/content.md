@@ -1,0 +1,61 @@
+| Country                                              | ISO   |   year |   value |
+|------------------------------------------------------|-------|--------|---------|
+| Azerbaijan                                           | AZE   |   2022 |       1 |
+| Belgium                                              | BEL   |   2020 |       1 |
+| Benin                                                | BEN   |   2018 |       2 |
+| Bhutan                                               | BTN   |   2011 |       2 |
+| Botswana                                             | BWA   |   2011 |       2 |
+| Burundi                                              | BDI   |   2016 |       2 |
+| Central African Republic                             | CAF   |   2019 |       2 |
+| Chad                                                 | TCD   |   2016 |       2 |
+| Congo                                                | COG   |   2018 |       2 |
+| Croatia                                              | HRV   |   2021 |       2 |
+| Egypt                                                | EGY   |   2015 |       2 |
+| Eritrea                                              | ERI   |   2020 |       2 |
+| Eswatini                                             | SWZ   |   2016 |       2 |
+| Gabon                                                | GAB   |   2024 |       2 |
+| Gambia                                               | GMB   |   2021 |       2 |
+| Georgia                                              | GEO   |   2014 |       2 |
+| Ghana                                                | GHA   |   2020 |       2 |
+| Guinea                                               | GIN   |   2014 |       2 |
+| Guinea-Bissau                                        | GNB   |   2017 |       2 |
+| Iceland                                              | ISL   |   2019 |       2 |
+| India                                                | IND   |   2017 |       2 |
+| Indonesia                                            | IDN   |   2022 |       2 |
+| Iran (Islamic Republic of)                           | IRN   |   2023 |       2 |
+| Iraq                                                 | IRQ   |   2014 |       2 |
+| Ireland                                              | IRL   |   2013 |       2 |
+| Jamaica                                              | JAM   |   2005 |       2 |
+| Japan                                                | JPN   |   2024 |       2 |
+| Kenya                                                | KEN   |   2014 |       2 |
+| Kuwait                                               | KWT   |   2019 |       2 |
+| Latvia                                               | LVA   |   2022 |       2 |
+| Liberia                                              | LBR   |   2022 |       2 |
+| Madagascar                                           | MDG   |   2016 |       2 |
+| Malawi                                               | MWI   |   2018 |       2 |
+| Malaysia                                             | MYS   |   2023 |       2 |
+| Mauritania                                           | MRT   |   2017 |       2 |
+| Mongolia                                             | MNG   |   2017 |       2 |
+| Niger                                                | NER   |   2016 |       2 |
+| Nigeria                                              | NGA   |   2016 |       2 |
+| Panama                                               | PAN   |   2016 |       2 |
+| Paraguay                                             | PRY   |   2015 |       2 |
+| Peru                                                 | PER   |   2020 |       2 |
+| Poland                                               | POL   |   2021 |       1 |
+| Rwanda                                               | RWA   |   2015 |       2 |
+| Saint Lucia                                          | LCA   |   2024 |       2 |
+| Sao Tome and Principe                                | STP   |   2022 |       2 |
+| Seychelles                                           | SYC   |   2015 |       2 |
+| Sierra Leone                                         | SLE   |   2021 |       2 |
+| Singapore                                            | SGP   |   2022 |       1 |
+| Somalia                                              | SOM   |   2014 |       2 |
+| Sri Lanka                                            | LKA   |   2016 |       2 |
+| Sudan                                                | SDN   |   2017 |       2 |
+| Togo                                                 | TGO   |   2023 |       2 |
+| Tunisia                                              | TUN   |   2019 |       2 |
+| United Kingdom of Great Britain and Northern Ireland | GBR   |   2019 |       2 |
+| United Republic of Tanzania                          | TZA   |   2003 |       1 |
+| United States of America                             | USA   |   2018 |       2 |
+| Uruguay                                              | URY   |   2021 |       2 |
+| Uzbekistan                                           | UZB   |   2018 |       2 |
+| Zambia                                               | ZMB   |   2011 |       2 |
