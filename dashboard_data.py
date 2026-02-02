@@ -52,16 +52,16 @@ def get_pillar_cols(variant='eq'):
 def get_metadata_en():
     return {
         'pillars': {
-            'A': 'Sanitary Capacity and Security (Pillar A)',
-            'B': 'National Efforts and Health Systems (Pillar B)',
-            'C': 'International Cooperation (Pillar C)',
-            'D': 'Leadership and Participation (Pillar D)'
+            'A': 'Health Capacity (Pillar A)',
+            'B': 'Effort and Resilience (Pillar B)',
+            'C': 'Political–Legal Commitment (Pillar C)',
+            'D': 'WHO Governance Engagement (Pillar D)'
         },
         'pillar_desc': {
-            'A': 'Evaluates core detection, response, and sanitary security capacities according to international standards (SPAR/GHS). Represents the minimum technical infrastructure.',
-            'B': 'Measures domestic health investment, disaster preparedness, and universal coverage. Reflects internal commitment to systemic resilience.',
-            'C': 'Analyses the adoption of global policies, national strategies, and recognition of international norms. Shows alignment with global governance.',
-            'D': 'Quantifies presence and leadership roles in WHO assemblies and bodies. Represents political agency within the international system.'
+            'A': 'Implemented preparedness and compliance (e-SPAR overall score; GHS Index overall score). Represents the minimum technical infrastructure.',
+            'B': 'Sustained material commitment (health expenditure % GDP, disaster risk reduction implementation, UHC coverage). Reflects internal commitment to systemic resilience.',
+            'C': 'Domestic institutionalisation of health norms (health policies, plans, strategies, and formal recognition of the right to health).',
+            'D': 'Effective participation in global health governance (participation frequency, decision-making roles, and leadership positions within WHO governing bodies).'
         },
         'indices': {
             'GHEI': 'GHEI Index (Absolute)',

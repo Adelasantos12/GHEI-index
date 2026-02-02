@@ -90,7 +90,7 @@ app.layout = html.Div([
                     html.H6("Key Concepts", className="fw-bold"),
                     make_info_card("Absolute GHEI", "Total score based on observed performance."),
                     make_info_card("Adjusted GHEI", "Score that removes the advantage of economic power (WPI), rewarding those who do more with less."),
-                    make_info_card("Pillar D", "Participation and leadership within the WHO."),
+                    make_info_card("Pillar D", "WHO Governance Engagement: leadership and agency."),
                 ], className="mt-4")
             ], width=3),
 
@@ -123,7 +123,7 @@ app.layout = html.Div([
                         html.Div([
                             html.Div([
                                 html.H4("Temporal Evolution and Agency Capacity", className="mt-4"),
-                                html.P("Synchronisation of total contribution with international cooperation and institutional leadership."),
+                                html.P("Synchronisation of total contribution with political commitment and institutional engagement."),
                             ], className="p-3 bg-light rounded mb-4"),
                             dcc.Graph(id='line-trajectory-sync'),
                             html.Hr(),
@@ -321,7 +321,7 @@ def update_presence_agency(countries, year):
         y='leadership_event_it_mm_global',
         hover_name='CountryName',
         color='ISO',
-        title=f"Presence vs. Agency ({year})",
+        title=f"Presence vs. Agency (Pillar D) - {year}",
         labels={
             'participation_event_it_mm_global': 'Presence (Attendance Frequency)',
             'leadership_event_it_mm_global': 'Agency (Leadership Roles)'
@@ -364,14 +364,18 @@ def update_trajectory(countries, variant):
 
     # We want GHEI, Pillar C and Pillar D
     cols = ['GHEI', f'pillar_C_{variant}', f'pillar_D_{variant}']
-    labels = {'GHEI': 'GHEI (Total)', f'pillar_C_{variant}': 'Pillar C (Cooperation)', f'pillar_D_{variant}': 'Pillar D (Leadership)'}
+    labels = {
+        'GHEI': 'GHEI (Total)',
+        f'pillar_C_{variant}': 'Pillar C (Commitment)',
+        f'pillar_D_{variant}': 'Pillar D (Engagement)'
+    }
 
     melted = filtered.melt(id_vars=['year', 'CountryName', 'ISO'], value_vars=cols,
                           var_name='Metric', value_name='Value')
     melted['Metric'] = melted['Metric'].map(labels)
 
     fig = px.line(melted, x='year', y='Value', color='CountryName', line_dash='Metric',
-                 markers=True, title="Trajectory: GHEI vs. Cooperation (C) vs. Leadership (D)",
+                 markers=True, title="Trajectory: GHEI vs. Commitment (C) vs. Engagement (D)",
                  labels={'year':'Year', 'Value':'Score', 'CountryName':'Country'})
 
     # Add event markers for NoExclusion changes
@@ -491,7 +495,7 @@ def update_traceability(iso, year):
 
     # Key indicators audit
     indicators = [
-        ('e_spar', 'Sanitary Security (SPAR)'),
+        ('e_spar', 'Health Capacity (SPAR)'),
         ('ghs_index', 'GHS Index'),
         ('hexp_gdp', 'Health Expenditure (% of GDP)'),
         ('uhc_index', 'UHC Index')
