@@ -49,45 +49,45 @@ def load_dashboard_data():
 def get_pillar_cols(variant='eq'):
     return [f'pillar_A_{variant}', f'pillar_B_{variant}', f'pillar_C_{variant}', f'pillar_D_{variant}']
 
-def get_metadata_es():
+def get_metadata_en():
     return {
         'pillars': {
-            'A': 'Capacidad y Seguridad Sanitaria (Pilar A)',
-            'B': 'Esfuerzos Nacionales y Sistema de Salud (Pilar B)',
-            'C': 'Cooperación Internacional (Pilar C)',
-            'D': 'Liderazgo y Participación (Pilar D)'
+            'A': 'Sanitary Capacity and Security (Pillar A)',
+            'B': 'National Efforts and Health Systems (Pillar B)',
+            'C': 'International Cooperation (Pillar C)',
+            'D': 'Leadership and Participation (Pillar D)'
         },
         'pillar_desc': {
-            'A': 'Evalúa las capacidades básicas de detección, respuesta y seguridad sanitaria según estándares internacionales (SPAR/GHS). Representa la infraestructura técnica mínima.',
-            'B': 'Mide la inversión nacional en salud, preparación ante desastres y cobertura universal. Refleja el compromiso interno con la resiliencia sistémica.',
-            'C': 'Analiza la adopción de políticas globales, estrategias nacionales y reconocimiento de normas internacionales. Muestra la alineación con la gobernanza global.',
-            'D': 'Cuantifica la presencia y roles de liderazgo en asambleas y organismos de la OMS. Representa la agencia política en el sistema internacional.'
+            'A': 'Evaluates core detection, response, and sanitary security capacities according to international standards (SPAR/GHS). Represents the minimum technical infrastructure.',
+            'B': 'Measures domestic health investment, disaster preparedness, and universal coverage. Reflects internal commitment to systemic resilience.',
+            'C': 'Analyses the adoption of global policies, national strategies, and recognition of international norms. Shows alignment with global governance.',
+            'D': 'Quantifies presence and leadership roles in WHO assemblies and bodies. Represents political agency within the international system.'
         },
         'indices': {
-            'GHEI': 'Índice GHEI (Absoluto)',
-            'GHEI_adj': 'GHEI Ajustado (Esfuerzo Relativo)',
-            'GHEI_raw': 'GHEI sin penalizaciones'
+            'GHEI': 'GHEI Index (Absolute)',
+            'GHEI_adj': 'Adjusted GHEI (Relative Effort)',
+            'GHEI_raw': 'GHEI without penalties'
         },
         'descriptions': {
-            'GHEI': 'Contribución total observada al sistema de salud global.',
-            'GHEI_adj': 'Contribución relativa que descuenta la ventaja del poder económico (WPI). Identifica países que "superan su peso".',
-            'NoExclusion': 'Garantía de acceso no discriminatorio a servicios de salud. Su ausencia penaliza el liderazgo internacional.'
+            'GHEI': 'Total observed contribution to the global health system.',
+            'GHEI_adj': 'Relative contribution that discounts the advantage of economic power (WPI). Identifies countries that "punch above their weight".',
+            'NoExclusion': 'Guarantee of non-discriminatory access to health services. Its absence penalises international leadership.'
         },
         'indicators': {
-            'e_spar_mm_global': 'Capacidad SPAR (Autoevaluación OMS)',
-            'ghs_index_mm_global': 'Índice Global Health Security',
-            'hexp_gdp_mm_global': 'Gasto en Salud (% PIB)',
-            'uhc_index_mm_global': 'Índice de Cobertura Universal (UHC)',
-            'health_policy_mm_global': 'Políticas de Salud Internacional',
-            'national_plan_mm_global': 'Planes Nacionales de Salud',
-            'national_strategy_mm_global': 'Estrategias Sanitarias Nacionales',
-            'recognition_mm_global': 'Reconocimiento de Normas Int.',
-            'participation_event_it_mm_global': 'Frecuencia de Participación (Presencia)',
-            'leadership_event_it_mm_global': 'Roles de Liderazgo (Agencia)',
-            'decision_event_it_mm_global': 'Roles de Decisión',
-            'admin_event_it_mm_global': 'Roles Administrativos',
-            'role_type_it_mm_global': 'Diversidad de Roles',
-            'disaster_risk_oriented_mm_global': 'Gestión de Riesgo de Desastres',
-            'NoExclusion_mm_global': 'Índice de No Exclusión'
+            'e_spar_mm_global': 'SPAR Capacity (WHO Self-Assessment)',
+            'ghs_index_mm_global': 'Global Health Security Index',
+            'hexp_gdp_mm_global': 'Health Expenditure (% of GDP)',
+            'uhc_index_mm_global': 'Universal Health Coverage (UHC) Index',
+            'health_policy_mm_global': 'International Health Policies',
+            'national_plan_mm_global': 'National Health Plans',
+            'national_strategy_mm_global': 'National Health Strategies',
+            'recognition_mm_global': 'Recognition of Int. Norms',
+            'participation_event_it_mm_global': 'Participation Frequency (Presence)',
+            'leadership_event_it_mm_global': 'Leadership Roles (Agency)',
+            'decision_event_it_mm_global': 'Decision-making Roles',
+            'admin_event_it_mm_global': 'Administrative Roles',
+            'role_type_it_mm_global': 'Diversity of Roles',
+            'disaster_risk_oriented_mm_global': 'Disaster Risk Management',
+            'NoExclusion_mm_global': 'No-Exclusion Index'
         }
     }
