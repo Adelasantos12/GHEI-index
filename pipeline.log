@@ -21,3 +21,14 @@ Dependency network computed.
 Monte Carlo sensitivity completed.
 Codebook generated.
 Final dataset exported.
+Panel built: (609, 37) rows
+Normalization completed (global and per-year).
+Correlation-based elimination A:[] B:[] C:[] D:['role_type_it_mm_global']
+Final index computed.
+GHEI adjusted by WPI residualization (with fallback fill).
+CAS SHAP computed for Pillar D.
+Lagged dynamics modeled.
+Dependency network computed.
+Monte Carlo sensitivity completed.
+Codebook generated.
+Final dataset exported.

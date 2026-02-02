@@ -133,3 +133,20 @@ Loaded C_Exclusiones from /workspace/project/data_intermediate/C_Exclusiones.xls
 Aggregated D_WPI to unique ISO-year: (2405, 3)
 Aggregated C_participation to unique ISO-year: (946, 7)
 Validation passed.
+Loaded Notion.xlsx for schema reference: /app/Notion.xlsx
+Loaded A_e_SPAR from /app/A_e-SPAR.xlsx shape=(2156, 54)
+Loaded A_GHSIndex from /app/A_GHSIndex.csv shape=(390, 314)
+Loaded B_DisasterRisk from /app/B_DisasterRisk.csv shape=(4361, 4)
+Loaded B_HealthExpenditure from /app/B_HealthExpenditure_percentageGDP.csv shape=(4656, 4)
+Loaded B_UHCIndex from /app/B_UHCIndex.csv shape=(593, 4)
+Loaded C_participation from /app/C_participation_clean.csv shape=(949, 8)
+Loaded D_WPI from /app/D_WPI_Long_format.csv shape=(2418, 4)
+Loaded B_HealthPolicy from /app/B_HealthPolicy.csv shape=(140, 5)
+Loaded B_NationalPlan from /app/B_NationalPlan.csv shape=(59, 4)
+Loaded B_NationalStrategy from /app/B_NationalStrategy.csv shape=(48, 4)
+Loaded B_recognition from /app/B_recognition.csv shape=(194, 3)
+Loaded B_efforts from /app/B_efforts.xlsx shape=(194, 3)
+Loaded C_Exclusiones from /app/C_Exclusiones.xlsx shape=(52, 4)
+Aggregated D_WPI to unique ISO-year: (2405, 3)
+Aggregated C_participation to unique ISO-year: (946, 7)
+Validation passed.
