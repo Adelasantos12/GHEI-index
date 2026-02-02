@@ -97,108 +97,97 @@ app.layout = html.Div([
             # Content
             dbc.Col([
                 dbc.Tabs([
-                    # Tab 1: Evolución Temporal
-                    dbc.Tab(label="📈 Evolución Temporal", tab_id="tab-temporal", children=[
+                    # Mod 1: Perfil de Compromiso
+                    dbc.Tab(label="👤 Perfil de Compromiso", tab_id="tab-profile", children=[
                         html.Div([
                             html.Div([
-                                html.H4("¿Cómo ha cambiado el índice con el tiempo?", className="mt-4"),
-                                html.P("Este gráfico muestra la trayectoria del GHEI. Un aumento indica una mayor contribución relativa a la salud global."),
-                            ], className="p-3 bg-light rounded mb-4"),
-                            dcc.Graph(id='line-ghei-evolution'),
-                            html.Hr(),
-                            html.H5("Desglose por Pilares", className="mt-4"),
-                            html.P("Vea cómo evolucionan las cuatro áreas principales (A, B, C, D) para los países seleccionados."),
-                            dcc.Graph(id='line-pillar-evolution')
-                        ], className="p-3")
-                    ]),
-
-                    # Tab 2: Rankings
-                    dbc.Tab(label="🏆 Rankings y Comparación", tab_id="tab-rank", children=[
-                        html.Div([
-                            html.Div([
-                                html.H4("¿Quiénes lideran el índice?", className="mt-4"),
-                                html.P("Comparación transversal de los 20 países con mayor puntaje en el año seleccionado."),
+                                html.H4("Resumen Estructural del Compromiso", className="mt-4"),
+                                html.P("Análisis configuracional del país seleccionado, identificando habilitadores y cuellos de botella."),
                             ], className="p-3 bg-light rounded mb-4"),
                             dbc.Row([
-                                dbc.Col(dcc.Graph(id='bar-ranking'), width=8),
-                                dbc.Col([
-                                    html.H5("Distribución de Puntajes"),
-                                    html.P("¿Cómo se concentran los países en cada pilar?", className="small"),
-                                    dcc.Graph(id='violin-distribution')
-                                ], width=4)
+                                dbc.Col(html.Div(id='profile-summary'), width=12),
                             ]),
                             html.Hr(),
-                            html.H5("Sensibilidad (Probabilidad de estar en el Top)"),
-                            html.P("Muestra la robustez del ranking: ¿Qué tan probable es que el país sea realmente un líder?", className="small"),
-                            dcc.Graph(id='bar-topk')
+                            dbc.Row([
+                                dbc.Col([
+                                    html.H5("Configuración de Pilares (0-1)"),
+                                    dcc.Graph(id='pillar-config-map'),
+                                    html.Small("El pilar con menor puntaje actúa como cuello de botella sistémico.", className="text-muted")
+                                ], width=12)
+                            ])
                         ], className="p-3")
                     ]),
 
-                    # Tab 3: Estructura vs Desempeño
-                    dbc.Tab(label="⚖️ Estructura vs Esfuerzo", tab_id="tab-struct", children=[
+                    # Mod 3 & 4: Trayectoria y Agencia
+                    dbc.Tab(label="📈 Trayectoria y Agencia", tab_id="tab-agency", children=[
                         html.Div([
                             html.Div([
-                                html.H4("Poder Estructural vs. Contribución Real", className="mt-4"),
-                                html.P("¿Contribuyen los países solo porque son ricos? El eje X muestra el poder estructural (WPI) y el eje Y el GHEI."),
-                                html.P("Los países arriba de la línea roja están contribuyendo MÁS de lo esperado para su nivel de poder."),
+                                html.H4("Evolución Temporal y Capacidad de Agencia", className="mt-4"),
+                                html.P("Sincronización de la contribución total con la cooperación y el liderazgo institucional."),
                             ], className="p-3 bg-light rounded mb-4"),
-                            dbc.Switch(id='show-adj-toggle', label="Ver GHEI Ajustado (Residuos)", value=False, className="mb-2"),
-                            dcc.Graph(id='scatter-wpi'),
+                            dcc.Graph(id='line-trajectory-sync'),
                             html.Hr(),
-                            html.H5("Composición del Índice (A-D)"),
-                            html.P("Muestra cuánto aporta cada pilar al puntaje final del país seleccionado."),
-                            dcc.Graph(id='stacked-pillar-contrib')
+                            dbc.Row([
+                                dbc.Col([
+                                    html.H5("Presencia vs. Agencia (Pilar D)"),
+                                    html.P("La asistencia frecuente (presencia) no garantiza influencia (liderazgo/agencia).", className="small"),
+                                    dcc.Graph(id='scatter-presence-agency')
+                                ], width=12)
+                            ])
                         ], className="p-3")
                     ]),
 
-                    # Tab 4: Engagement OMS
-                    dbc.Tab(label="🇺🇳 Liderazgo OMS (Pilar D)", tab_id="tab-who", children=[
+                    # Mod 5 & 6: Analítica de Sistemas
+                    dbc.Tab(label="🧠 Analítica de Sistemas", tab_id="tab-systems", children=[
                         html.Div([
                             html.Div([
-                                html.H4("Detalle del Pilar D: Participación en la OMS", className="mt-4"),
-                                html.P("Analiza roles de liderazgo, participación en asambleas y cumplimiento de normativas."),
+                                html.H4("Ajuste Estructural y Umbrales de Activación", className="mt-4"),
+                                html.P("Interpretación del desempeño relativo al poder estructural (WPI) y dependencias no lineales."),
                             ], className="p-3 bg-light rounded mb-4"),
                             dbc.Row([
                                 dbc.Col([
-                                    html.H5("Componentes de Participación"),
-                                    dcc.Graph(id='bar-pillar-d-components')
+                                    html.H5("GHEI vs Poder Estructural"),
+                                    dcc.Graph(id='scatter-capacity-adj')
+                                ], width=6),
+                                dbc.Col([
+                                    html.H5("Umbrales de Activación (CAS)"),
+                                    dcc.Graph(id='scatter-thresholds')
+                                ], width=6)
+                            ]),
+                            html.Div([
+                                html.P("Nota: Los umbrales muestran puntos empíricos donde el compromiso tiende a estabilizarse o activarse.", className="small text-muted")
+                            ], className="mt-2")
+                        ], className="p-3")
+                    ]),
+
+                    # Mod 7: Robustez y Límites
+                    dbc.Tab(label="🛡️ Robustez y Límites", tab_id="tab-limits", children=[
+                        html.Div([
+                            html.Div([
+                                html.H4("Sensibilidad y Límites Epistémicos", className="mt-4"),
+                                html.P("Evaluación de la solidez de los resultados y declaración explícita de lo que el índice NO mide."),
+                            ], className="p-3 bg-light rounded mb-4"),
+                            dbc.Row([
+                                dbc.Col([
+                                    html.H5("Probabilidad de Liderazgo (Top-K)"),
+                                    dcc.Graph(id='bar-robustness')
                                 ], width=7),
                                 dbc.Col([
-                                    html.H5("Impacto de Exclusión"),
-                                    html.P("¿Cómo afecta la penalización por políticas excluyentes al puntaje de liderazgo?", className="small"),
-                                    dcc.Graph(id='scatter-noexclusion')
+                                    html.H5("Límites de la Medición"),
+                                    html.Div([
+                                        html.Ul([
+                                            html.Li("Sin afirmaciones causales: El índice describe configuraciones, no causas."),
+                                            html.Li("Sin medición de influencia informal: Solo se capturan roles institucionales registrados."),
+                                            html.Li("Margen de error de fuente: El índice hereda incertidumbres de las fuentes primarias (SPAR, GHS)."),
+                                            html.Li("Interpretación, no prescripción: Los resultados no son recomendaciones automáticas."),
+                                        ])
+                                    ], className="small")
                                 ], width=5)
                             ])
                         ], className="p-3")
                     ]),
 
-                    # Tab 5: Analítica Avanzada
-                    dbc.Tab(label="🧠 Analítica (CAS)", tab_id="tab-cas", children=[
-                        html.Div([
-                            html.Div([
-                                html.H4("Resultados de Sistemas Adaptativos Complejos", className="mt-4"),
-                                html.P("Esta sección analiza relaciones no lineales y la importancia estadística de cada variable."),
-                            ], className="p-3 bg-light rounded mb-4"),
-                            dbc.Row([
-                                dbc.Col([
-                                    html.H5("Importancia de Variables (SHAP)"),
-                                    html.P("¿Qué pilares influyen más en el resultado final?", className="small"),
-                                    dcc.Graph(id='bar-shap-importance')
-                                ], width=6),
-                                dbc.Col([
-                                    html.H5("Correlaciones Temporales"),
-                                    html.P("Relación entre los rezagos históricos de los pilares.", className="small"),
-                                    dcc.Graph(id='heatmap-lags')
-                                ], width=6)
-                            ]),
-                            html.Hr(),
-                            html.H5("Dependencias No Lineales"),
-                            html.P("Muestra cómo cambia el esfuerzo (residuo) a medida que aumenta el poder estructural.", className="small"),
-                            dcc.Graph(id='scatter-dependency')
-                        ], className="p-3")
-                    ]),
-
-                    # Tab 6: Trazabilidad
+                    # Tab: Trazabilidad (Keep original)
                     dbc.Tab(label="🔍 Auditoría de Datos", tab_id="tab-trace", children=[
                         html.Div([
                             html.Div([
@@ -215,7 +204,7 @@ app.layout = html.Div([
                             ])
                         ], className="p-3")
                     ])
-                ], id="tabs-main", active_tab="tab-temporal")
+                ], id="tabs-main", active_tab="tab-profile")
             ], width=9)
         ])
     ], fluid=True, className="pb-5")
@@ -224,85 +213,211 @@ app.layout = html.Div([
 # --- Callbacks ---
 
 @app.callback(
-    Output('line-ghei-evolution', 'figure'),
-    [Input('country-selector', 'value')]
+    Output('profile-summary', 'children'),
+    [Input('country-selector', 'value'), Input('year-selector', 'value'), Input('variant-selector', 'value')]
 )
-def update_ghei_evolution(countries):
-    if not countries: return go.Figure().update_layout(title="Seleccione al menos un país")
-    filtered = df[df['ISO'].isin(countries)]
-    fig = px.line(filtered, x='year', y='GHEI', color='CountryName', markers=True,
-                 title="Evolución del Índice GHEI", labels={'year':'Año', 'GHEI':'Puntaje GHEI', 'CountryName':'País'})
-    fig.update_layout(template='plotly_white', hovermode='x unified')
+def update_profile_summary(countries, year, variant):
+    if not countries:
+        return dbc.Alert("Seleccione un país en el panel lateral para generar el perfil.", color="info")
+
+    iso = countries[0] # Use first selected country
+    row = df[(df['ISO'] == iso) & (df['year'] == year)]
+    if row.empty:
+        return dbc.Alert(f"No hay datos para {iso} en {year}.", color="warning")
+
+    country_name = row['CountryName'].iloc[0]
+    p_scores = {k: row[f'pillar_{k}_{variant}'].iloc[0] for k in ['A', 'B', 'C', 'D']}
+
+    # Logic for summary
+    sorted_p = sorted(p_scores.items(), key=lambda x: x[1], reverse=True)
+    dom_key = sorted_p[0][0]
+    con_key = sorted_p[-1][0]
+
+    ghei = row['GHEI'].iloc[0]
+    ghei_adj = row['GHEI_adj'].iloc[0]
+    perf_status = "sobre-desempeño" if ghei_adj > ghei else "sub-desempeño"
+
+    return dbc.Card([
+        dbc.CardBody([
+            html.H5(f"Análisis de Compromiso: {country_name} ({year})", className="card-title text-primary"),
+            dbc.Row([
+                dbc.Col([
+                    html.P([html.B("Configuración Dominante: "), meta['pillars'][dom_key]]),
+                    html.P([html.B("Habilitador Principal: "), f"{meta['pillars'][dom_key]} (puntuación: {p_scores[dom_key]:.2f})"]),
+                    html.P([html.B("Cuello de Botella (Restricción): "), f"{meta['pillars'][con_key]} (puntuación: {p_scores[con_key]:.2f})"]),
+                ], width=6),
+                dbc.Col([
+                    html.P([html.B("GHEI Absoluto: "), f"{ghei:.3f}"]),
+                    html.P([html.B("GHEI Ajustado (Esfuerzo): "), f"{ghei_adj:.3f}"]),
+                    html.P([
+                        html.B("Interpretación: "),
+                        f"El país muestra un {perf_status} relativo a su poder estructural. ",
+                        "Esto indica que su contribución a la salud global está " +
+                        ("más" if ghei_adj > ghei else "menos") + " impulsada por voluntad política que por capacidad económica pura."
+                    ])
+                ], width=6)
+            ])
+        ])
+    ], className="shadow-sm border-start border-primary border-5")
+
+@app.callback(
+    Output('pillar-config-map', 'figure'),
+    [Input('country-selector', 'value'), Input('year-selector', 'value'), Input('variant-selector', 'value')]
+)
+def update_pillar_map(countries, year, variant):
+    if not countries: return go.Figure().update_layout(title="Seleccione un país")
+
+    iso = countries[0]
+    row = df[(df['ISO'] == iso) & (df['year'] == year)]
+    if row.empty: return go.Figure()
+
+    categories = ['A', 'B', 'C', 'D']
+    scores = [row[f'pillar_{k}_{variant}'].iloc[0] for k in categories]
+    labels = [meta['pillars'][k] for k in categories]
+    descs = [meta['pillar_desc'][k] for k in categories]
+
+    # Find bottleneck
+    min_idx = np.argmin(scores)
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatterpolar(
+        r=scores + [scores[0]],
+        theta=labels + [labels[0]],
+        fill='toself',
+        name=row['CountryName'].iloc[0],
+        hoverinfo="text",
+        text=[f"{l}: {s:.2f}<br>{d}" for l, s, d in zip(labels, scores, descs)] + [f"{labels[0]}: {scores[0]:.2f}"]
+    ))
+
+    # Highlight bottleneck
+    fig.add_trace(go.Scatterpolar(
+        r=[scores[min_idx]],
+        theta=[labels[min_idx]],
+        mode='markers',
+        marker=dict(color='red', size=12, symbol='x'),
+        name='Cuello de Botella',
+        hoverinfo="text",
+        text=[f"RESTRICCIÓN: {labels[min_idx]} es el pilar limitante."]
+    ))
+
+    fig.update_layout(
+        polar=dict(radialaxis=dict(visible=True, range=[0, 1])),
+        showlegend=True,
+        template='plotly_white',
+        title=f"Configuración del Compromiso: {row['CountryName'].iloc[0]} ({year})"
+    )
     return fig
 
 @app.callback(
-    Output('line-pillar-evolution', 'figure'),
-    [Input('country-selector', 'value'), Input('variant-selector', 'value')]
+    Output('scatter-presence-agency', 'figure'),
+    [Input('country-selector', 'value'), Input('year-selector', 'value')]
 )
-def update_pillar_evolution(countries, variant):
-    if not countries: return go.Figure().update_layout(title="Seleccione al menos un país")
-    cols = get_pillar_cols(variant)
-    filtered = df[df['ISO'].isin(countries)]
-
-    melted = filtered.melt(id_vars=['year', 'CountryName'], value_vars=cols,
-                          var_name='Pillar', value_name='Score')
-
-    # Clean pillar names for legend
-    melted['Pillar'] = melted['Pillar'].apply(lambda x: x.split('_')[-2] + " (" + x.split('_')[-1] + ")")
-
-    fig = px.line(melted, x='year', y='Score', color='CountryName', line_dash='Pillar',
-                 markers=True, title=f"Evolución de Pilares (Método: {variant})",
-                 labels={'year':'Año', 'Score':'Valor', 'CountryName':'País'})
-    fig.update_layout(template='plotly_white')
-    return fig
-
-@app.callback(
-    Output('bar-ranking', 'figure'),
-    [Input('year-selector', 'value')]
-)
-def update_ranking(year):
-    filtered = df[df['year'] == year].sort_values('GHEI', ascending=False).head(20)
-    fig = px.bar(filtered, x='CountryName', y='GHEI', color='GHEI',
-                title=f"Top 20 Países - Año {year}",
-                labels={'GHEI':'Índice GHEI', 'CountryName':'País'},
-                color_continuous_scale='Viridis')
-    fig.update_layout(xaxis={'categoryorder':'total descending'}, template='plotly_white')
-    return fig
-
-@app.callback(
-    Output('violin-distribution', 'figure'),
-    [Input('year-selector', 'value'), Input('variant-selector', 'value')]
-)
-def update_distribution(year, variant):
-    cols = get_pillar_cols(variant)
+def update_presence_agency(countries, year):
     filtered = df[df['year'] == year]
-    melted = filtered.melt(value_vars=cols, var_name='Pillar', value_name='Score')
-    fig = px.violin(melted, x='Pillar', y='Score', box=True, points='all',
-                   title=f"Distribución {year}", color='Pillar')
+
+    fig = px.scatter(
+        filtered,
+        x='participation_event_it_mm_global',
+        y='leadership_event_it_mm_global',
+        hover_name='CountryName',
+        color='ISO',
+        title=f"Presencia vs. Agencia ({year})",
+        labels={
+            'participation_event_it_mm_global': 'Presencia (Frecuencia de Asistencia)',
+            'leadership_event_it_mm_global': 'Agencia (Roles de Liderazgo)'
+        }
+    )
+
+    # Highlight selected countries
+    if countries:
+        selected = filtered[filtered['ISO'].isin(countries)]
+        fig.add_trace(go.Scatter(
+            x=selected['participation_event_it_mm_global'],
+            y=selected['leadership_event_it_mm_global'],
+            mode='markers+text',
+            text=selected['CountryName'],
+            textposition='top center',
+            marker=dict(color='red', size=12, symbol='star'),
+            name='Seleccionados'
+        ))
+
+    fig.add_annotation(
+        x=0.8, y=0.1,
+        text="Alta Presencia ≠ Alta Influencia",
+        showarrow=False,
+        font=dict(size=14, color="red"),
+        bgcolor="white",
+        bordercolor="red"
+    )
+
     fig.update_layout(template='plotly_white', showlegend=False)
     return fig
 
 @app.callback(
-    Output('bar-topk', 'figure'),
+    Output('line-trajectory-sync', 'figure'),
+    [Input('country-selector', 'value'), Input('variant-selector', 'value')]
+)
+def update_trajectory(countries, variant):
+    if not countries: return go.Figure().update_layout(title="Seleccione países para ver la trayectoria")
+
+    filtered = df[df['ISO'].isin(countries)].copy()
+
+    # We want GHEI, Pillar C and Pillar D
+    cols = ['GHEI', f'pillar_C_{variant}', f'pillar_D_{variant}']
+    labels = {'GHEI': 'GHEI (Total)', f'pillar_C_{variant}': 'Pilar C (Cooperación)', f'pillar_D_{variant}': 'Pilar D (Liderazgo)'}
+
+    melted = filtered.melt(id_vars=['year', 'CountryName', 'ISO'], value_vars=cols,
+                          var_name='Métrica', value_name='Valor')
+    melted['Métrica'] = melted['Métrica'].map(labels)
+
+    fig = px.line(melted, x='year', y='Valor', color='CountryName', line_dash='Métrica',
+                 markers=True, title="Trayectoria: GHEI vs. Cooperación (C) vs. Liderazgo (D)",
+                 labels={'year':'Año', 'Valor':'Puntaje', 'CountryName':'País'})
+
+    # Add event markers for NoExclusion changes
+    for iso in countries:
+        country_df = filtered[filtered['ISO'] == iso].sort_values('year')
+        for i in range(1, len(country_df)):
+            if country_df['NoExclusion'].iloc[i] != country_df['NoExclusion'].iloc[i-1]:
+                year = country_df['year'].iloc[i]
+                status = "Política No Excluyente" if country_df['NoExclusion'].iloc[i] == 1 else "Política Excluyente"
+                fig.add_vline(x=year, line_dash="dash", line_color="grey")
+                fig.add_annotation(x=year, y=1.0, text=f"{iso}: {status}", showarrow=True, arrowhead=1)
+
+    fig.update_layout(template='plotly_white', hovermode='x unified', yaxis_range=[0,1.1])
+    return fig
+
+@app.callback(
+    Output('bar-robustness', 'figure'),
     [Input('country-selector', 'value')]
 )
-def update_topk(countries):
-    if df_topk.empty or not countries: return go.Figure().update_layout(title="Sin datos de sensibilidad")
+def update_robustness(countries):
+    if df_topk.empty or not countries:
+        return go.Figure().update_layout(title="Seleccione países para ver análisis de robustez")
+
     filtered = df_topk[df_topk['ISO'].isin(countries)].copy()
     filtered['CountryName'] = filtered['ISO'].map(data['iso_map']).fillna(filtered['ISO'])
 
     fig = px.bar(filtered, x='CountryName', y='prob_top_k',
-                title="Robustez: Probabilidad de pertenecer al Top-K",
-                labels={'prob_top_k':'Probabilidad', 'CountryName':'País'})
-    fig.update_layout(template='plotly_white')
+                title="Robustez: Probabilidad de pertenecer al Top-20",
+                labels={'prob_top_k':'Probabilidad de Liderazgo Robustos', 'CountryName':'País'},
+                color='prob_top_k', color_continuous_scale='Blues')
+
+    fig.add_annotation(
+        x=0.5, y=-0.2, xref="paper", yref="paper",
+        text="Muestra qué tan probable es que el país mantenga su posición ante cambios en los pesos del índice.",
+        showarrow=False, font=dict(size=10, color="grey")
+    )
+
+    fig.update_layout(template='plotly_white', showlegend=False)
     return fig
 
 @app.callback(
-    Output('scatter-wpi', 'figure'),
-    [Input('year-selector', 'value'), Input('show-adj-toggle', 'value')]
+    Output('scatter-capacity-adj', 'figure'),
+    [Input('year-selector', 'value'), Input('country-selector', 'value')]
 )
-def update_wpi_scatter(year, show_adj):
-    filtered = df[df['year'] == year]
+def update_capacity_adj(year, countries):
+    filtered = df[df['year'] == year].copy()
 
     # Ensure wpi_val is present
     if 'wpi_val' not in filtered.columns and not df_cas.empty:
@@ -312,124 +427,56 @@ def update_wpi_scatter(year, show_adj):
     if 'wpi_val' not in filtered.columns:
         return go.Figure().update_layout(title="Datos WPI no disponibles")
 
-    y_col = 'GHEI_adj' if show_adj else 'GHEI'
-    fig = px.scatter(filtered, x='wpi_val', y=y_col, hover_name='CountryName',
+    fig = px.scatter(filtered, x='wpi_val', y='GHEI', hover_name='CountryName',
                     trendline="ols", title=f"GHEI vs Poder Estructural (WPI) - {year}",
-                    labels={'wpi_val':'Poder Estructural (WPI)', 'GHEI':'GHEI Bruto', 'GHEI_adj':'GHEI Ajustado (Esfuerzo)'})
+                    labels={'wpi_val':'Poder Estructural (WPI)', 'GHEI':'GHEI Absoluto'})
 
-    # Add identity line or similar if useful, but trendline is better
-    fig.update_layout(template='plotly_white')
-    return fig
+    # Identify over/under performers
+    if countries:
+        selected = filtered[filtered['ISO'].isin(countries)]
+        fig.add_trace(go.Scatter(
+            x=selected['wpi_val'], y=selected['GHEI'],
+            mode='markers+text',
+            text=selected['ISO'],
+            textposition='top center',
+            marker=dict(color='red', size=10, symbol='diamond'),
+            name='Seleccionados'
+        ))
 
-@app.callback(
-    Output('stacked-pillar-contrib', 'figure'),
-    [Input('country-selector', 'value'), Input('year-selector', 'value'), Input('variant-selector', 'value')]
-)
-def update_pillar_contrib(countries, year, variant):
-    if not countries: return go.Figure()
-    cols = get_pillar_cols(variant)
-    filtered = df[(df['ISO'].isin(countries)) & (df['year'] == year)]
+    fig.add_annotation(
+        x=filtered['wpi_val'].min(), y=filtered['GHEI'].max(),
+        text="Arriba de la línea: Sobre-desempeño (Esfuerzo superior al esperado)",
+        showarrow=False, font=dict(color="green")
+    )
 
-    melted = filtered.melt(id_vars=['CountryName'], value_vars=cols, var_name='Pillar', value_name='Score')
-
-    fig = px.bar(melted, x='CountryName', y='Score', color='Pillar', barmode='stack',
-                title=f"Contribución por Pilar ({year})",
-                labels={'Score':'Contribución', 'CountryName':'País'})
-    fig.update_layout(template='plotly_white')
-    return fig
-
-@app.callback(
-    Output('bar-pillar-d-components', 'figure'),
-    [Input('country-selector', 'value'), Input('year-selector', 'value')]
-)
-def update_pillar_d(countries, year):
-    if not countries or df_cas.empty: return go.Figure().update_layout(title="Seleccione países")
-
-    comp_cols = ['participation_event_it_mm_global', 'decision_event_it_mm_global',
-                 'leadership_event_it_mm_global', 'admin_event_it_mm_global', 'role_type_it_mm_global']
-
-    # Filter columns that actually exist
-    existing = [c for c in comp_cols if c in df_cas.columns]
-
-    filtered = df_cas[(df_cas['ISO'].isin(countries)) & (df_cas['year'] == year)]
-    if filtered.empty: return go.Figure().update_layout(title="No hay datos para esta selección")
-
-    melted = filtered.melt(id_vars=['ISO'], value_vars=existing, var_name='Componente', value_name='Puntaje')
-    melted['País'] = melted['ISO'].map(data['iso_map']).fillna(melted['ISO'])
-
-    fig = px.bar(melted, x='Componente', y='Puntaje', color='País', barmode='group',
-                title=f"Métricas de Participación OMS - {year}")
-    fig.update_layout(template='plotly_white', xaxis_tickangle=-45)
-    return fig
-
-@app.callback(
-    Output('scatter-noexclusion', 'figure'),
-    [Input('year-selector', 'value')]
-)
-def update_exclusion_scatter(year):
-    filtered = df[df['year'] == year]
-    fig = px.scatter(filtered, x='NoExclusion', y='pillar_D_eq', hover_name='CountryName',
-                    title=f"Pillar D vs Penalización NoExclusión ({year})",
-                    labels={'NoExclusion':'Índice NoExclusión', 'pillar_D_eq':'Pilar D (Liderazgo)'})
-    fig.update_layout(template='plotly_white')
-    return fig
-
-@app.callback(
-    Output('bar-shap-importance', 'figure'),
-    [Input('variant-selector', 'value')]
-)
-def update_shap(variant):
-    shap_cols = [f'SHAP_pillar_A_{variant}', f'SHAP_pillar_B_{variant}', f'SHAP_pillar_C_{variant}']
-    if df_cas.empty or not any(c in df_cas.columns for c in shap_cols):
-        return go.Figure().update_layout(title="Datos SHAP no disponibles")
-
-    existing = [c for c in shap_cols if c in df_cas.columns]
-    mean_shap = df_cas[existing].abs().mean().reset_index()
-    mean_shap.columns = ['Pilar', 'Importancia_Media']
-
-    fig = px.bar(mean_shap, x='Pilar', y='Importancia_Media',
-                title="Importancia de Pilares (Valores SHAP)",
-                color='Importancia_Media', color_continuous_scale='Reds')
     fig.update_layout(template='plotly_white', showlegend=False)
     return fig
 
 @app.callback(
-    Output('heatmap-lags', 'figure'),
-    [Input('country-selector', 'value')]
-)
-def update_lags(countries):
-    lag_cols = ['A_lag', 'B_lag', 'C_lag', 'D_lag']
-    if df_cas.empty: return go.Figure().update_layout(title="Datos no disponibles")
-
-    existing = [c for c in lag_cols if c in df_cas.columns]
-    if not existing: return go.Figure().update_layout(title="Sin rezagos temporales")
-
-    filtered = df_cas[df_cas['ISO'].isin(countries)] if countries else df_cas
-    if filtered.empty: filtered = df_cas
-
-    corr = filtered[existing].corr()
-    fig = px.imshow(corr, text_auto=True, title="Correlación Temporal (Lags)",
-                   color_continuous_scale='RdBu_r', range_color=[-1,1])
-    fig.update_layout(template='plotly_white')
-    return fig
-
-@app.callback(
-    Output('scatter-dependency', 'figure'),
+    Output('scatter-thresholds', 'figure'),
     [Input('variant-selector', 'value')]
 )
-def update_dep(variant):
-    if df_cas.empty: return go.Figure().update_layout(title="Datos no disponibles")
+def update_thresholds(variant):
+    if df_cas.empty: return go.Figure().update_layout(title="Datos CAS no disponibles")
 
+    # Use residual of Pillar D vs WPI to show 'effort' beyond structural capacity
     y_col = f'pillar_D_{variant}_resid' if f'pillar_D_{variant}_resid' in df_cas.columns else 'pillarD_resid'
     x_col = 'wpi_val'
 
     if y_col not in df_cas.columns or x_col not in df_cas.columns:
-         return go.Figure().update_layout(title="Residuales no encontrados")
+         return go.Figure().update_layout(title="Variables de activación no encontradas")
 
     fig = px.scatter(df_cas, x=x_col, y=y_col, color='year',
                     trendline="lowess",
-                    title=f"Dependencia No Lineal: Esfuerzo vs Poder Estructural",
-                    labels={x_col:'Poder Estructural (WPI)', y_col:'Residuo (Esfuerzo)'})
+                    title="Análisis de Activación: Esfuerzo vs Capacidad",
+                    labels={x_col:'Poder Estructural (WPI)', y_col:'Activación (Residuo de Liderazgo)'})
+
+    fig.add_annotation(
+        x=df_cas[x_col].median(), y=df_cas[y_col].max(),
+        text="Umbral de Activación: El punto donde el esfuerzo deja de ser lineal.",
+        showarrow=True, arrowhead=2
+    )
+
     fig.update_layout(template='plotly_white')
     return fig
 
