@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
-from .utils import log, entropy_weights, pca_weights, corr_elimination
-from .config import OUTPUT_DIR
+from utils import log, entropy_weights, pca_weights, corr_elimination
+from config import OUTPUT_DIR
 import os
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -97,6 +97,40 @@ def final_index(panel: pd.DataFrame, pillar_variant='eq', lambda_penalty=1.0):
     ghei = ghei_raw * np.power(panel['NoExclusion_mm_global'].fillna(1.0), lambda_penalty)
     panel['GHEI_raw'] = ghei_raw
     panel['GHEI'] = ghei
+
+    # --- Robustness: Arithmetic Aggregation ---
+    panel['GHEI_arith'] = (A + B + C + D) / 4.0
+
+    # Calculate Spearman correlation
+    rho_global = panel[['GHEI_raw', 'GHEI_arith']].corr(method='spearman').iloc[0, 1]
+
+    # By year
+    rhos = {}
+    for y, g in panel.groupby('year'):
+        if len(g) > 1:
+            rhos[int(y)] = g[['GHEI_raw', 'GHEI_arith']].corr(method='spearman').iloc[0, 1]
+
+    latest_year = int(panel['year'].max())
+    latest_df = panel[panel['year'] == latest_year]
+
+    # Robustness Exports
+    import json
+
+    summary = {
+        'rho_global': rho_global,
+        'rho_by_year': rhos,
+        'latest_year': latest_year,
+        'top_raw': latest_df.nlargest(10, 'GHEI_raw')[['ISO', 'GHEI_raw']].to_dict(orient='records'),
+        'bottom_raw': latest_df.nsmallest(10, 'GHEI_raw')[['ISO', 'GHEI_raw']].to_dict(orient='records'),
+        'top_arith': latest_df.nlargest(10, 'GHEI_arith')[['ISO', 'GHEI_arith']].to_dict(orient='records'),
+        'bottom_arith': latest_df.nsmallest(10, 'GHEI_arith')[['ISO', 'GHEI_arith']].to_dict(orient='records')
+    }
+
+    with open(os.path.join(OUTPUT_DIR, "robustness_summary.json"), "w") as f:
+        json.dump(summary, f, indent=4)
+
+    panel[['ISO', 'year', 'GHEI_raw', 'GHEI_arith']].to_csv(os.path.join(OUTPUT_DIR, "robustness_aggregation.csv"), index=False)
+
     log("Final index computed.", "pipeline.log")
     panel.to_csv(os.path.join(OUTPUT_DIR, "panel_index.csv"), index=False)
     return panel

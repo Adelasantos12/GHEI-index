@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
-from .utils import log, minmax_scale
-from .config import OUTPUT_DIR
+from utils import log, minmax_scale
+from config import OUTPUT_DIR
 import os
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
