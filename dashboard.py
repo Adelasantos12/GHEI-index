@@ -183,7 +183,36 @@ app.layout = html.Div([
                                         ])
                                     ], className="small")
                                 ], width=5)
-                            ])
+                            ]),
+
+                            html.Hr(),
+                            html.H5("Robustness Check: Aggregation Rule", className="mt-4"),
+                            html.P("Comparison between geometric aggregation (GHEI_raw) and arithmetic mean (GHEI_arith)."),
+
+                            dbc.Row([
+                                dbc.Col([
+                                    html.Div(id='robustness-rho-summary', className="p-2 border rounded bg-light text-center fw-bold")
+                                ], width=12)
+                            ], className="mb-3"),
+
+                            dbc.Row([
+                                dbc.Col([
+                                    html.H6("Top 10 Comparison (Selected Year)"),
+                                    html.Div(id='robustness-top10')
+                                ], width=6),
+                                dbc.Col([
+                                    html.H6("Bottom 10 Comparison (Selected Year)"),
+                                    html.Div(id='robustness-bottom10')
+                                ], width=6)
+                            ], className="mt-3"),
+
+                            dbc.Row([
+                                dbc.Col([
+                                    html.H6("Zero Value Analysis (GHEI_raw=0 vs GHEI_arith=0)"),
+                                    html.Div(id='robustness-zeros')
+                                ], width=12)
+                            ], className="mt-3")
+
                         ], className="p-3")
                     ]),
 
@@ -546,6 +575,69 @@ def update_traceability(iso, year):
 )
 def download_csv(n_clicks):
     return dcc.send_data_frame(df.to_csv, "ghei_full_data.csv")
+
+@app.callback(
+    [Output('robustness-rho-summary', 'children'),
+     Output('robustness-top10', 'children'),
+     Output('robustness-bottom10', 'children'),
+     Output('robustness-zeros', 'children')],
+    [Input('year-selector', 'value')]
+)
+def update_robustness_aggregation(year):
+    # Calculate global rho
+    rho_global = df[['GHEI_raw', 'GHEI_arith']].corr(method='spearman').iloc[0, 1]
+
+    # Calculate rho for selected year
+    df_year = df[df['year'] == year].copy()
+    if len(df_year) > 1:
+        rho_year = df_year[['GHEI_raw', 'GHEI_arith']].corr(method='spearman').iloc[0, 1]
+    else:
+        rho_year = np.nan
+
+    rho_text = f"Global Spearman Rho: {rho_global:.4f} | Rho for {year}: {rho_year:.4f}"
+
+    # Top/Bottom 10 for selected year
+    top10_raw = df_year.nlargest(10, 'GHEI_raw')[['CountryName', 'GHEI_raw']]
+    top10_arith = df_year.nlargest(10, 'GHEI_arith')[['CountryName', 'GHEI_arith']]
+
+    bottom10_raw = df_year.nsmallest(10, 'GHEI_raw')[['CountryName', 'GHEI_raw']]
+    bottom10_arith = df_year.nsmallest(10, 'GHEI_arith')[['CountryName', 'GHEI_arith']]
+
+    def make_table(d):
+        return dbc.Table.from_dataframe(d.round(4), striped=True, bordered=True, hover=True, size='sm')
+
+    top10_content = html.Div([
+        dbc.Row([
+            dbc.Col([html.Strong("GHEI_raw"), make_table(top10_raw)], width=6),
+            dbc.Col([html.Strong("GHEI_arith"), make_table(top10_arith)], width=6)
+        ])
+    ])
+
+    bottom10_content = html.Div([
+        dbc.Row([
+            dbc.Col([html.Strong("GHEI_raw"), make_table(bottom10_raw)], width=6),
+            dbc.Col([html.Strong("GHEI_arith"), make_table(bottom10_arith)], width=6)
+        ])
+    ])
+
+    # Zero analysis
+    zeros_raw = df_year[df_year['GHEI_raw'] == 0]
+    zeros_arith = df_year[df_year['GHEI_arith'] == 0]
+
+    zeros_text = html.Div([
+        dbc.Row([
+            dbc.Col([
+                html.P(f"Countries with GHEI_raw == 0 ({len(zeros_raw)}):"),
+                html.Ul([html.Li(n) for n in zeros_raw['CountryName']])
+            ], width=6),
+            dbc.Col([
+                html.P(f"Countries with GHEI_arith == 0 ({len(zeros_arith)}):"),
+                html.Ul([html.Li(n) for n in zeros_arith['CountryName']])
+            ], width=6)
+        ])
+    ])
+
+    return rho_text, top10_content, bottom10_content, zeros_text
 
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0', port=8050)

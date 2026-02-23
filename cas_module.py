@@ -3,8 +3,8 @@ import numpy as np
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.metrics import r2_score
 import shap
-from .utils import log
-from .config import OUTPUT_DIR
+from utils import log
+from config import OUTPUT_DIR
 import os
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)

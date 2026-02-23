@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import os
 
-from .config import LOG_DIR
+from config import LOG_DIR
 
 os.makedirs(LOG_DIR, exist_ok=True)
 

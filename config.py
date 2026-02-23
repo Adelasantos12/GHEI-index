@@ -1,10 +1,10 @@
 import os
 
-PROJECT_ROOT = "/workspace/project"
-DATA_DIR = os.path.join(PROJECT_ROOT, "data_intermediate")
-LOG_DIR = os.path.join(PROJECT_ROOT, "logs")
-OUTPUT_DIR = os.path.join(PROJECT_ROOT, "outputs")
-DOCS_DIR = os.path.join(PROJECT_ROOT, "docs")
+PROJECT_ROOT = "."
+DATA_DIR = PROJECT_ROOT
+LOG_DIR = PROJECT_ROOT
+OUTPUT_DIR = PROJECT_ROOT
+DOCS_DIR = PROJECT_ROOT
 
 # Required filenames as per normative contract
 FILES = {

@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
-from .config import OUTPUT_DIR
-from .utils import log
+from config import OUTPUT_DIR
+from utils import log
 import os
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)

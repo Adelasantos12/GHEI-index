@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 import os
-from .config import FILES
-from .utils import log, ValidationError
+from config import FILES
+from utils import log, ValidationError
 
 RANGES = {
     "A_e_SPAR.Promedio_total": (0, 100),
