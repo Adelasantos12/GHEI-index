@@ -50,7 +50,9 @@ def make_sidebar():
             dcc.Dropdown(
                 id='year-selector',
                 options=[{'label': str(y), 'value': y} for y in sorted(df['year'].unique(), reverse=True)],
-                value=df['year'].max()
+                value=df['year'].max(),
+                clearable=True,
+                placeholder="Select year (or clear for all)"
             ),
 
             html.Br(),
@@ -147,6 +149,16 @@ app.layout = html.Div([
                             dbc.Row([
                                 dbc.Col([
                                     html.H5("GHEI vs Structural Power"),
+                                    dbc.Row([
+                                        dbc.Col(dcc.Dropdown(id='y-axis-selector', options=[
+                                            {'label': 'GHEI (Absolute)', 'value': 'GHEI'},
+                                            {'label': 'GHEI (Raw)', 'value': 'GHEI_raw'},
+                                            {'label': 'GHEI (Adjusted)', 'value': 'GHEI_adj'}
+                                        ], value='GHEI', clearable=False), width=6),
+                                        dbc.Col(dcc.Checklist(id='trendline-toggle', options=[
+                                            {'label': ' Show Trendline (OLS)', 'value': 'ols'}
+                                        ], value=[], inputStyle={"margin-right": "5px"}), width=6, className="d-flex align-items-center")
+                                    ], className="mb-2"),
                                     dcc.Graph(id='scatter-capacity-adj')
                                 ], width=6),
                                 dbc.Col([
@@ -447,42 +459,86 @@ def update_robustness(countries):
 
 @app.callback(
     Output('scatter-capacity-adj', 'figure'),
-    [Input('year-selector', 'value'), Input('country-selector', 'value')]
+    [Input('year-selector', 'value'),
+     Input('country-selector', 'value'),
+     Input('y-axis-selector', 'value'),
+     Input('trendline-toggle', 'value')]
 )
-def update_capacity_adj(year, countries):
-    filtered = df[df['year'] == year].copy()
+def update_capacity_adj(year, countries, y_axis, trendline_opts):
+    # Handle year selection
+    if year is None:
+        filtered = df.copy()
+        title_year = "All Years"
+    else:
+        filtered = df[df['year'] == year].copy()
+        title_year = str(year)
+
+    # Ensure year is int
+    if 'year' in filtered.columns:
+        filtered['year'] = filtered['year'].astype(int)
 
     # Ensure wpi_val is present
-    if 'wpi_val' not in filtered.columns and not df_cas.empty:
-        wpi_data = df_cas[df_cas['year'] == year][['ISO', 'wpi_val']]
-        filtered = filtered.merge(wpi_data, on='ISO', how='left')
+    if 'wpi_val' not in filtered.columns:
+        if not df_cas.empty:
+            # Prepare df_cas for merge: select only needed columns
+            # Ensure year is int in df_cas too
+            cas_copy = df_cas.copy()
+            if 'year' in cas_copy.columns:
+                cas_copy['year'] = cas_copy['year'].astype(int)
+
+            wpi_data = cas_copy[['ISO', 'year', 'wpi_val']].drop_duplicates()
+            filtered = filtered.merge(wpi_data, on=['ISO', 'year'], how='left')
 
     if 'wpi_val' not in filtered.columns:
         return go.Figure().update_layout(title="WPI data not available")
 
-    fig = px.scatter(filtered, x='wpi_val', y='GHEI', hover_name='CountryName',
-                    trendline="ols", title=f"GHEI vs Structural Power (WPI) - {year}",
-                    labels={'wpi_val':'Structural Power (WPI)', 'GHEI':'Absolute GHEI'})
+    # Determine trendline
+    trend = 'ols' if 'ols' in (trendline_opts or []) else None
 
-    # Identify over/under performers
+    # Determine color
+    color_col = 'year' if year is None else None
+
+    # Hover data
+    hover_cols = ["ISO", "year", "GHEI_raw", "GHEI", "GHEI_adj",
+                  "pillar_A_eq", "pillar_B_eq", "pillar_C_eq", "pillar_D_eq_adj"]
+    # Check which columns exist
+    hover_cols = [c for c in hover_cols if c in filtered.columns]
+
+    fig = px.scatter(
+        filtered,
+        x='wpi_val',
+        y=y_axis,
+        hover_name='CountryName',
+        hover_data=hover_cols,
+        color=color_col,
+        trendline=trend,
+        title=f"{y_axis} vs Structural Power (WPI) - {title_year}",
+        labels={'wpi_val':'Structural Power (WPI)', 'GHEI':'Absolute GHEI', 'GHEI_raw':'Raw GHEI', 'GHEI_adj':'Adjusted GHEI'}
+    )
+
+    # Identify over/under performers (Selected countries)
     if countries:
         selected = filtered[filtered['ISO'].isin(countries)]
         fig.add_trace(go.Scatter(
-            x=selected['wpi_val'], y=selected['GHEI'],
+            x=selected['wpi_val'],
+            y=selected[y_axis],
             mode='markers+text',
             text=selected['ISO'],
             textposition='top center',
             marker=dict(color='red', size=10, symbol='diamond'),
-            name='Selected'
+            name='Selected',
+            showlegend=False
         ))
 
-    fig.add_annotation(
-        x=filtered['wpi_val'].min(), y=filtered['GHEI'].max(),
-        text="Above the line: Over-performance (Effort superior to expected)",
-        showarrow=False, font=dict(color="green")
-    )
+    # Add annotation if applicable
+    if y_axis == 'GHEI':
+        fig.add_annotation(
+            x=filtered['wpi_val'].min(), y=filtered[y_axis].max(),
+            text="Interpretation: Residuals indicate over/under performance.",
+            showarrow=False, font=dict(color="green")
+        )
 
-    fig.update_layout(template='plotly_white', showlegend=False)
+    fig.update_layout(template='plotly_white', showlegend=(year is None))
     return fig
 
 @app.callback(
