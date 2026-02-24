@@ -5,6 +5,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import pandas as pd
 import numpy as np
+from scipy import stats
 from dashboard_data import load_dashboard_data, get_pillar_cols, get_metadata_en
 
 # Initialize data
@@ -22,61 +23,77 @@ server = app.server
 def make_header():
     return dbc.NavbarSimple(
         children=[
-            dbc.NavItem(dbc.NavLink("Quick Guide", href="#")),
+            dbc.NavItem(dbc.NavLink("Documentation", href="#")),
         ],
-        brand="GHEI Dashboard: Global Health Analytics",
+        brand="GHEI Analytical Platform",
         brand_href="#",
-        color="primary",
-        dark=True,
-        className="mb-4"
+        color="white",
+        dark=False,
+        className="mb-4 border-bottom shadow-sm",
+        style={'fontWeight': 'bold', 'color': '#2c3e50'}
     )
 
 def make_sidebar():
-    return dbc.Card([
-        dbc.CardHeader(html.H5("Configuration and Filters", className="mb-0")),
-        dbc.CardBody([
-            html.Label("1. Select Countries:", className="fw-bold"),
-            dcc.Dropdown(
-                id='country-selector',
-                options=[{'label': row['CountryName'], 'value': row['ISO']} for _, row in df[['ISO', 'CountryName']].drop_duplicates().sort_values('CountryName').iterrows()],
-                value=['USA', 'MEX', 'BRA', 'ESP'],
-                multi=True,
-                placeholder="Search country..."
-            ),
-            html.Small("You may select multiple countries to compare.", className="text-muted"),
+    n_countries = len(df['ISO'].unique())
+    min_year = df['year'].min()
+    max_year = df['year'].max()
 
-            html.Br(), html.Br(),
-            html.Label("2. Analysis Year:", className="fw-bold"),
-            dcc.Dropdown(
-                id='year-selector',
-                options=[{'label': str(y), 'value': y} for y in sorted(df['year'].unique(), reverse=True)],
-                value=df['year'].max(),
-                clearable=True,
-                placeholder="Select year (or clear for all)"
-            ),
+    return html.Div([
+        # Filters Section
+        dbc.Card([
+            dbc.CardHeader(html.H5("Configuration", className="mb-0 text-center", style={'fontSize': '1rem', 'fontWeight': '600'})),
+            dbc.CardBody([
+                html.Label("Select Countries", className="fw-bold small text-uppercase text-muted"),
+                dcc.Dropdown(
+                    id='country-selector',
+                    options=[{'label': row['CountryName'], 'value': row['ISO']} for _, row in df[['ISO', 'CountryName']].drop_duplicates().sort_values('CountryName').iterrows()],
+                    value=['USA', 'MEX', 'BRA', 'ESP'],
+                    multi=True,
+                    placeholder="Select...",
+                    style={'fontSize': '0.9rem'}
+                ),
 
-            html.Br(),
-            html.Label("3. Weighting Method:", className="fw-bold"),
-            dbc.RadioItems(
-                id='variant-selector',
-                options=[
-                    {'label': 'Equal Weights (Base)', 'value': 'eq'},
-                    {'label': 'PCA Analysis', 'value': 'pca'},
-                    {'label': 'Entropy Weights', 'value': 'ent'}
-                ],
-                value='eq'
-            ),
-            html.Small("Different ways to calculate the importance of each pillar.", className="text-muted"),
-        ])
-    ], className="shadow-sm")
+                html.Br(),
+                html.Label("Analysis Year", className="fw-bold small text-uppercase text-muted"),
+                dcc.Dropdown(
+                    id='year-selector',
+                    options=[{'label': str(y), 'value': y} for y in sorted(df['year'].unique(), reverse=True)],
+                    value=df['year'].max(),
+                    clearable=True,
+                    placeholder="Select year (or clear for all)",
+                    style={'fontSize': '0.9rem'}
+                ),
 
-def make_info_card(title, text):
-    return dbc.Card([
-        dbc.CardBody([
-            html.H6(title, className="card-title fw-bold text-primary"),
-            html.P(text, className="card-text small")
-        ])
-    ], className="mb-2 shadow-sm border-start border-primary border-4")
+                html.Br(),
+                html.Label("Weighting Method", className="fw-bold small text-uppercase text-muted"),
+                dbc.RadioItems(
+                    id='variant-selector',
+                    options=[
+                        {'label': 'Equal Weights (Base)', 'value': 'eq'},
+                        {'label': 'PCA Analysis', 'value': 'pca'},
+                        {'label': 'Entropy Weights', 'value': 'ent'}
+                    ],
+                    value='eq',
+                    style={'fontSize': '0.9rem'}
+                ),
+            ], className="p-3")
+        ], className="shadow-sm mb-4 border-0 bg-white"),
+
+        # Metadata Panel (Academic Trust)
+        dbc.Card([
+            dbc.CardBody([
+                html.H6("Study Metadata", className="fw-bold text-uppercase text-muted mb-3", style={'fontSize': '0.75rem', 'letterSpacing': '1px'}),
+                html.Table([
+                    html.Tr([html.Td("Period:", className="fw-bold text-secondary pe-2"), html.Td(f"{min_year}–{max_year}")]),
+                    html.Tr([html.Td("Countries:", className="fw-bold text-secondary pe-2"), html.Td(f"N = {n_countries}")]),
+                    html.Tr([html.Td("Method:", className="fw-bold text-secondary pe-2"), html.Td("Formative composite index")]),
+                    html.Tr([html.Td("Aggregation:", className="fw-bold text-secondary pe-2"), html.Td("Equal weights + Robustness")]),
+                    html.Tr([html.Td("Normalization:", className="fw-bold text-secondary pe-2"), html.Td("Min-max")]),
+                    html.Tr([html.Td("Source:", className="fw-bold text-secondary pe-2"), html.Td("Author calc. (SPAR, WHO, etc.)")]),
+                ], style={'fontSize': '0.8rem', 'lineHeight': '1.4', 'width': '100%'})
+            ], className="p-3")
+        ], className="shadow-sm border-0 bg-light")
+    ])
 
 # --- Layout ---
 
@@ -86,14 +103,7 @@ app.layout = html.Div([
         dbc.Row([
             # Sidebar
             dbc.Col([
-                make_sidebar(),
-                html.Div([
-                    html.Hr(),
-                    html.H6("Key Concepts", className="fw-bold"),
-                    make_info_card("Absolute GHEI", "Total score based on observed performance."),
-                    make_info_card("Adjusted GHEI", "Score that removes the advantage of economic power (WPI), rewarding those who do more with less."),
-                    make_info_card("Pillar D", "WHO Governance Engagement: leadership and agency."),
-                ], className="mt-4")
+                make_sidebar()
             ], width=3),
 
             # Content
@@ -162,13 +172,10 @@ app.layout = html.Div([
                                     dcc.Graph(id='scatter-capacity-adj')
                                 ], width=6),
                                 dbc.Col([
-                                    html.H5("Activation Thresholds (CAS)"),
+                                    html.H5("Activation Analysis (CAS)"),
                                     dcc.Graph(id='scatter-thresholds')
                                 ], width=6)
-                            ]),
-                            html.Div([
-                                html.P("Note: Thresholds show empirical points where engagement tends to stabilise or activate.", className="small text-muted")
-                            ], className="mt-2")
+                            ])
                         ], className="p-3")
                     ]),
 
@@ -228,14 +235,14 @@ app.layout = html.Div([
                         ], className="p-3")
                     ]),
 
-                    # Tab: Data Audit
-                    dbc.Tab(label="Data Audit", tab_id="tab-trace", children=[
+                    # Tab: Data Traceability
+                    dbc.Tab(label="Data Traceability", tab_id="tab-trace", children=[
                         html.Div([
                             html.Div([
-                                html.H4("Traceability and Transparency", className="mt-4"),
-                                html.P("Consult original (raw) and normalised values for a specific country."),
+                                html.H4("Data Traceability", className="mt-4"),
+                                html.P("Consult original (raw) and normalised values for specific indicators."),
                             ], className="p-3 bg-light rounded mb-4"),
-                            html.Label("Select a country to audit:", className="fw-bold"),
+                            html.Label("Select a country:", className="fw-bold"),
                             dcc.Dropdown(id='trace-country', options=[{'label': n, 'value': i} for i, n in data['iso_map'].items()], value='MEX'),
                             html.Br(),
                             html.Div(id='trace-table-container'),
@@ -276,30 +283,28 @@ def update_profile_summary(countries, year, variant):
 
     ghei = row['GHEI'].iloc[0]
     ghei_adj = row['GHEI_adj'].iloc[0]
-    perf_status = "over-performance" if ghei_adj > ghei else "under-performance"
+    perf_status = "above structural expectation" if ghei_adj > ghei else "below structural expectation"
 
     return dbc.Card([
         dbc.CardBody([
-            html.H5(f"Engagement Analysis: {country_name} ({year})", className="card-title text-primary"),
+            html.H5(f"Country Profile: {country_name} ({year})", className="card-title fw-bold text-dark"),
             dbc.Row([
                 dbc.Col([
-                    html.P([html.B("Dominant Configuration: "), meta['pillars'][dom_key]]),
-                    html.P([html.B("Main Enabler: "), f"{meta['pillars'][dom_key]} (score: {p_scores[dom_key]:.2f})"]),
-                    html.P([html.B("Bottleneck (Constraint): "), f"{meta['pillars'][con_key]} (score: {p_scores[con_key]:.2f})"]),
+                    html.P([html.Span("Dominant Configuration", className="fw-bold small text-muted"), html.Br(), meta['pillars'][dom_key]]),
+                    html.P([html.Span("Main Enabler", className="fw-bold small text-muted"), html.Br(), f"{meta['pillars'][dom_key]} ({p_scores[dom_key]:.2f})"]),
+                    html.P([html.Span("Systemic Constraint", className="fw-bold small text-muted"), html.Br(), f"{meta['pillars'][con_key]} ({p_scores[con_key]:.2f})"]),
                 ], width=6),
                 dbc.Col([
-                    html.P([html.B("Absolute GHEI: "), f"{ghei:.3f}"]),
-                    html.P([html.B("Adjusted GHEI (Effort): "), f"{ghei_adj:.3f}"]),
+                    html.P([html.Span("Absolute GHEI", className="fw-bold small text-muted"), html.Br(), f"{ghei:.3f}"]),
+                    html.P([html.Span("Structure-Adjusted GHEI", className="fw-bold small text-muted"), html.Br(), f"{ghei_adj:.3f}"]),
                     html.P([
-                        html.B("Interpretation: "),
-                        f"The country shows an {perf_status} relative to its structural power. ",
-                        "This indicates that its contribution to global health is " +
-                        ("more" if ghei_adj > ghei else "less") + " driven by political will than by pure economic capacity."
-                    ])
+                        html.Span("Structural Interpretation", className="fw-bold small text-muted"), html.Br(),
+                        f"Engagement is {perf_status}."
+                    ], className="mt-2")
                 ], width=6)
             ])
         ])
-    ], className="shadow-sm border-start border-primary border-5")
+    ], className="shadow-sm border-0 bg-white")
 
 @app.callback(
     Output('pillar-config-map', 'figure'),
@@ -468,7 +473,7 @@ def update_capacity_adj(year, countries, y_axis, trendline_opts):
     # Handle year selection
     if year is None:
         filtered = df.copy()
-        title_year = "All Years"
+        title_year = "2010–2023 (Pooled)"
     else:
         filtered = df[df['year'] == year].copy()
         title_year = str(year)
@@ -480,8 +485,6 @@ def update_capacity_adj(year, countries, y_axis, trendline_opts):
     # Ensure wpi_val is present
     if 'wpi_val' not in filtered.columns:
         if not df_cas.empty:
-            # Prepare df_cas for merge: select only needed columns
-            # Ensure year is int in df_cas too
             cas_copy = df_cas.copy()
             if 'year' in cas_copy.columns:
                 cas_copy['year'] = cas_copy['year'].astype(int)
@@ -492,8 +495,12 @@ def update_capacity_adj(year, countries, y_axis, trendline_opts):
     if 'wpi_val' not in filtered.columns:
         return go.Figure().update_layout(title="WPI data not available")
 
+    # Filter out NaNs for plot
+    filtered = filtered.dropna(subset=['wpi_val', y_axis])
+
     # Determine trendline
-    trend = 'ols' if 'ols' in (trendline_opts or []) else None
+    show_ols = 'ols' in (trendline_opts or [])
+    trend = 'ols' if show_ols else None
 
     # Determine color
     color_col = 'year' if year is None else None
@@ -501,8 +508,11 @@ def update_capacity_adj(year, countries, y_axis, trendline_opts):
     # Hover data
     hover_cols = ["ISO", "year", "GHEI_raw", "GHEI", "GHEI_adj",
                   "pillar_A_eq", "pillar_B_eq", "pillar_C_eq", "pillar_D_eq_adj"]
-    # Check which columns exist
     hover_cols = [c for c in hover_cols if c in filtered.columns]
+
+    # Titles
+    title_text = "Structural Power (WPI) vs Global Health Engagement"
+    subtitle_text = f"Absolute and structure-adjusted engagement relative to systemic power | {title_year}"
 
     fig = px.scatter(
         filtered,
@@ -512,11 +522,10 @@ def update_capacity_adj(year, countries, y_axis, trendline_opts):
         hover_data=hover_cols,
         color=color_col,
         trendline=trend,
-        title=f"{y_axis} vs Structural Power (WPI) - {title_year}",
         labels={'wpi_val':'Structural Power (WPI)', 'GHEI':'Absolute GHEI', 'GHEI_raw':'Raw GHEI', 'GHEI_adj':'Adjusted GHEI'}
     )
 
-    # Identify over/under performers (Selected countries)
+    # Identify Selected countries
     if countries:
         selected = filtered[filtered['ISO'].isin(countries)]
         fig.add_trace(go.Scatter(
@@ -525,20 +534,44 @@ def update_capacity_adj(year, countries, y_axis, trendline_opts):
             mode='markers+text',
             text=selected['ISO'],
             textposition='top center',
-            marker=dict(color='red', size=10, symbol='diamond'),
+            marker=dict(color='#d62728', size=8, symbol='circle'), # Academic red
             name='Selected',
             showlegend=False
         ))
 
-    # Add annotation if applicable
-    if y_axis == 'GHEI':
+    # OLS Stats
+    if show_ols and len(filtered) > 1:
+        slope, intercept, r_value, p_value, std_err = stats.linregress(filtered['wpi_val'], filtered[y_axis])
+        r_squared = r_value**2
+        eq_text = f"y = {slope:.2f}x + {intercept:.2f} | R² = {r_squared:.2f}"
+
+        # Add annotation for stats
         fig.add_annotation(
-            x=filtered['wpi_val'].min(), y=filtered[y_axis].max(),
-            text="Interpretation: Residuals indicate over/under performance.",
-            showarrow=False, font=dict(color="green")
+            xref="paper", yref="paper",
+            x=0.05, y=0.95,
+            text=eq_text,
+            showarrow=False,
+            font=dict(size=12, color="black"),
+            bgcolor="rgba(255, 255, 255, 0.8)",
+            bordercolor="black",
+            borderwidth=1
         )
 
-    fig.update_layout(template='plotly_white', showlegend=(year is None))
+    fig.update_layout(
+        template='plotly_white',
+        title={
+            'text': f"<b>{title_text}</b><br><span style='font-size: 12px; color: gray;'>{subtitle_text}</span>",
+            'y':0.95,
+            'x':0.0,
+            'xanchor': 'left',
+            'yanchor': 'top'
+        },
+        showlegend=(year is None),
+        font=dict(family="Arial, sans-serif", size=12, color="black"),
+        margin=dict(t=80, l=60, r=40, b=60),
+        xaxis=dict(showgrid=True, gridwidth=0.5, gridcolor='#f0f0f0'),
+        yaxis=dict(showgrid=True, gridwidth=0.5, gridcolor='#f0f0f0'),
+    )
     return fig
 
 @app.callback(
@@ -548,25 +581,55 @@ def update_capacity_adj(year, countries, y_axis, trendline_opts):
 def update_thresholds(variant):
     if df_cas.empty: return go.Figure().update_layout(title="CAS data not available")
 
-    # Use residual of Pillar D vs WPI to show 'effort' beyond structural capacity
-    y_col = f'pillar_D_{variant}_resid' if f'pillar_D_{variant}_resid' in df_cas.columns else 'pillarD_resid'
+    # Use GHEI_raw vs WPI residuals as requested
+    # We calculate residuals on the fly to ensure accuracy with the requested method
+    df_plot = df_cas.dropna(subset=['wpi_val', 'GHEI_raw']).copy()
+
+    if df_plot.empty:
+        return go.Figure().update_layout(title="Insufficient data for Activation Analysis")
+
+    slope, intercept, r_value, p_value, std_err = stats.linregress(df_plot['wpi_val'], df_plot['GHEI_raw'])
+    df_plot['residual'] = df_plot['GHEI_raw'] - (slope * df_plot['wpi_val'] + intercept)
+
     x_col = 'wpi_val'
+    y_col = 'residual'
 
-    if y_col not in df_cas.columns or x_col not in df_cas.columns:
-         return go.Figure().update_layout(title="Activation variables not found")
-
-    fig = px.scatter(df_cas, x=x_col, y=y_col, color='year',
+    fig = px.scatter(df_plot, x=x_col, y=y_col, color='year',
                     trendline="lowess",
-                    title="Activation Analysis: Effort vs Capacity",
-                    labels={x_col:'Structural Power (WPI)', y_col:'Activation (Leadership Residual)'})
+                    title="Activation Analysis (Pooled 2010–2023)",
+                    labels={x_col:'Structural Power (WPI)', y_col:'OLS residual from GHEI_raw ~ wpi_val'})
 
+    # Academic Note
     fig.add_annotation(
-        x=df_cas[x_col].median(), y=df_cas[y_col].max(),
-        text="Activation Threshold: The point where effort ceases to be linear.",
-        showarrow=True, arrowhead=2
+        xref="paper", yref="paper",
+        x=0.5, y=-0.25,
+        text="Positive values indicate engagement above structural expectations.",
+        showarrow=False,
+        font=dict(size=10, color="gray", style="italic")
     )
 
-    fig.update_layout(template='plotly_white')
+    # Threshold Annotation (Median WPI)
+    median_wpi = df_plot[x_col].median()
+    max_resid = df_plot[y_col].max()
+
+    fig.add_vline(x=median_wpi, line_dash="dash", line_color="gray", opacity=0.5)
+    fig.add_annotation(
+        x=median_wpi, y=max_resid,
+        text="Activation Threshold",
+        showarrow=True, arrowhead=1,
+        ax=40, ay=-20
+    )
+
+    fig.update_layout(
+        template='plotly_white',
+        margin=dict(b=80), # Extra margin for the note
+        title={
+            'y':0.95,
+            'x':0.0,
+            'xanchor': 'left',
+            'yanchor': 'top'
+        }
+    )
     return fig
 
 @app.callback(
@@ -652,27 +715,27 @@ def update_robustness_aggregation(year):
 
     rho_text = f"Global Spearman Rho: {rho_global:.4f} | Rho for {year}: {rho_year:.4f}"
 
-    # Top/Bottom 10 for selected year
-    top10_raw = df_year.nlargest(10, 'GHEI_raw')[['CountryName', 'GHEI_raw']]
-    top10_arith = df_year.nlargest(10, 'GHEI_arith')[['CountryName', 'GHEI_arith']]
+    # Top 5 for selected year (Academic/Minimalist)
+    top5_raw = df_year.nlargest(5, 'GHEI_raw')[['CountryName', 'GHEI_raw']].reset_index(drop=True)
+    top5_arith = df_year.nlargest(5, 'GHEI_arith')[['CountryName', 'GHEI_arith']].reset_index(drop=True)
 
-    bottom10_raw = df_year.nsmallest(10, 'GHEI_raw')[['CountryName', 'GHEI_raw']]
-    bottom10_arith = df_year.nsmallest(10, 'GHEI_arith')[['CountryName', 'GHEI_arith']]
+    bottom5_raw = df_year.nsmallest(5, 'GHEI_raw')[['CountryName', 'GHEI_raw']].reset_index(drop=True)
+    bottom5_arith = df_year.nsmallest(5, 'GHEI_arith')[['CountryName', 'GHEI_arith']].reset_index(drop=True)
 
     def make_table(d):
-        return dbc.Table.from_dataframe(d.round(4), striped=True, bordered=True, hover=True, size='sm')
+        return dbc.Table.from_dataframe(d.round(3), striped=False, bordered=False, hover=True, size='sm', style={'fontSize': '0.85rem'})
 
     top10_content = html.Div([
         dbc.Row([
-            dbc.Col([html.Strong("GHEI_raw"), make_table(top10_raw)], width=6),
-            dbc.Col([html.Strong("GHEI_arith"), make_table(top10_arith)], width=6)
+            dbc.Col([html.Span("Multiplicative (Raw)", className="small text-muted fw-bold"), make_table(top5_raw)], width=6),
+            dbc.Col([html.Span("Arithmetic (Check)", className="small text-muted fw-bold"), make_table(top5_arith)], width=6)
         ])
     ])
 
     bottom10_content = html.Div([
         dbc.Row([
-            dbc.Col([html.Strong("GHEI_raw"), make_table(bottom10_raw)], width=6),
-            dbc.Col([html.Strong("GHEI_arith"), make_table(bottom10_arith)], width=6)
+            dbc.Col([html.Span("Multiplicative (Raw)", className="small text-muted fw-bold"), make_table(bottom5_raw)], width=6),
+            dbc.Col([html.Span("Arithmetic (Check)", className="small text-muted fw-bold"), make_table(bottom5_arith)], width=6)
         ])
     ])
 
